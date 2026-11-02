@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;900&display=swap');
+
+:root {
+  --bg-warm: #F4F0EA;
+  --black: #000000;
+  --white: #FFFFFF;
+  --yellow-neo: #FFD028;
+  --coral-neo: #FF6B6B;
+  --mint-neo: #4ECDC4;
+  --purple-neo: #A78BFA;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-warm);
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Neo-Brutalist Hard Shadows */
+.shadow-brutal-sm {
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+.shadow-brutal {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.shadow-brutal-lg {
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.shadow-brutal-xl {
+  box-shadow: 8px 8px 0px 0px #000000;
+}
+
+/* Button & Interactive Physics */
+.btn-brutal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  border: 2.5px solid #000000;
+  border-radius: 0.75rem;
+  box-shadow: 4px 4px 0px 0px #000000;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-brutal:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.btn-brutal:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px #000000;
+}
+
+.btn-brutal-sm {
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0px 0px #000000;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.btn-brutal-sm:hover {
+  transform: translate(-1.5px, -1.5px);
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.btn-brutal-sm:active {
+  transform: translate(1.5px, 1.5px);
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+
+/* Card Hover Physics */
+.card-brutal {
+  border: 3px solid #000000;
+  background-color: #FFFFFF;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 0px 0px #000000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-brutal-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 7px 7px 0px 0px #000000;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F0EA;
+  border-left: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD028;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B6B;
+}
+
+/* Pulsing Badge Dot */
+@keyframes brutal-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.3);
+  }
+}
+
+.brutal-pulse-dot {
+  animation: brutal-pulse 1.8s infinite ease-in-out;
+}

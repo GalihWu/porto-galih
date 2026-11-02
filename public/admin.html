@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin CMS | Portfolio Content Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Iconify Web Component -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23000%22 stroke-width=%222%22><circle cx=%2212%22 cy=%2212%22 r=%223%22/><path d=%22M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z%22/></svg>">
+  <style>
+    iconify-icon {
+      display: inline-flex;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-[#F4F0EA] text-black min-h-screen flex flex-col selection:bg-[#FFD028] selection:text-black">
+
+  <!-- ============================================== -->
+  <!-- 1. LOGIN SCREEN OVERLAY (Shown if not logged in)-->
+  <!-- ============================================== -->
+  <div id="login-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="card-brutal max-w-md w-full p-6 md:p-8 bg-white shadow-brutal-xl space-y-6">
+      
+      <div class="text-center space-y-2">
+        <div class="w-14 h-14 mx-auto bg-[#FFD028] border-2 border-black rounded-2xl flex items-center justify-center text-2xl shadow-brutal-sm">
+          <iconify-icon icon="lucide:lock-keyhole" class="text-2xl text-black"></iconify-icon>
+        </div>
+        <h1 class="font-heading font-black text-2xl">Admin CMS Login</h1>
+        <p class="text-xs font-bold text-black/70">Masukkan kata sandi admin untuk mengelola isi profil.</p>
+      </div>
+
+      <form id="login-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-black uppercase mb-1">Kata Sandi Admin</label>
+          <input type="password" id="login-password" required placeholder="Masukkan kata sandi..." 
+                 class="w-full px-4 py-2.5 text-sm border-2 border-black rounded-xl bg-[#F4F0EA] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]">
+          <p class="text-[11px] text-black/60 mt-1">Default password: <code>admin123</code> (dapat diubah di <code>.env</code>)</p>
+        </div>
+
+        <div id="login-error" class="hidden p-3 bg-red-100 border-2 border-red-500 rounded-lg text-xs font-bold text-red-700"></div>
+
+        <button type="submit" id="login-submit-btn" class="w-full btn-brutal py-3 bg-[#FF6B6B] text-white text-sm flex items-center justify-center gap-2">
+          <iconify-icon icon="lucide:log-in" class="text-base"></iconify-icon>
+          <span>Masuk ke CMS Admin</span>
+        </button>
+      </form>
+
+      <div class="text-center pt-2">
+        <a href="/" class="text-xs font-bold text-black/70 hover:underline">← Kembali ke Halaman Publik</a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ============================================== -->
+  <!-- 2. ADMIN DASHBOARD CONTAINER                    -->
+  <!-- ============================================== -->
+  <div id="admin-app" class="hidden flex-1 flex flex-col min-h-screen">
+    
+    <!-- Top Admin Header -->
+    <header class="sticky top-0 z-40 w-full border-b-[3px] border-black bg-white px-4 md:px-8 py-3.5 shadow-sm">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        
+        <div class="flex items-center gap-3">
+          <span class="px-2.5 py-1 bg-[#FFD028] border-2 border-black font-black text-xs uppercase rounded-lg shadow-brutal-sm flex items-center gap-1.5">
+            <iconify-icon icon="lucide:settings-2" class="text-sm"></iconify-icon>
+            <span>CMS Panel</span>
+          </span>
+          <span class="font-heading font-black text-lg md:text-xl text-black">
+            Galih Wahyu Utomo <span class="text-xs font-normal text-black/60 hidden sm:inline">(Local JSON Store)</span>
+          </span>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="/" target="_blank" class="btn-brutal btn-brutal-sm bg-white text-black hidden sm:flex items-center gap-1.5">
+            <span>Lihat Web Publik</span>
+            <iconify-icon icon="lucide:external-link" class="text-xs"></iconify-icon>
+          </a>
+          <button id="btn-logout" class="btn-brutal btn-brutal-sm bg-[#F4F0EA] hover:bg-[#FF6B6B] hover:text-white transition-colors text-black flex items-center gap-1.5">
+            <iconify-icon icon="lucide:log-out" class="text-xs"></iconify-icon>
+            <span>Keluar</span>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Main Content Area with Side Tabs -->
+    <div class="flex-1 max-w-6xl w-full mx-auto px-4 md:px-8 py-8 space-y-6">
+
+      <!-- Toast Alert Notification -->
+      <div id="toast" class="hidden fixed bottom-6 right-6 z-50 max-w-md p-4 rounded-xl border-2 border-black shadow-brutal-lg transition-all duration-300">
+        <div class="flex items-start gap-3">
+          <span id="toast-icon-wrap" class="p-1 rounded-lg bg-black text-[#FFD028] flex items-center justify-center">
+            <iconify-icon id="toast-icon" icon="lucide:check-circle-2" class="text-xl"></iconify-icon>
+          </span>
+          <div class="flex-1">
+            <h4 id="toast-title" class="font-heading font-black text-sm uppercase">Notifikasi</h4>
+            <p id="toast-message" class="text-xs font-medium text-black/90 mt-0.5"></p>
+          </div>
+          <button onclick="hideToast()" class="text-black font-black text-xs ml-2 hover:opacity-75">✕</button>
+        </div>
+      </div>
+
+      <!-- Header Action Bar -->
+      <div class="card-brutal p-4 bg-white flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-3 h-3 rounded-full bg-emerald-500 brutal-pulse-dot"></div>
+          <div>
+            <p class="text-xs font-black uppercase text-black/80 flex items-center gap-1.5">
+              <iconify-icon icon="lucide:database" class="text-sm text-black"></iconify-icon>
+              <span>Single Source of Truth: <code>data/profile.json</code></span>
+            </p>
+            <p class="text-[11px] text-black/60">Backup otomatis aktif ke <code>data/profile.backup.json</code> setiap kali Anda menyimpan.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button id="btn-restore-backup" type="button" class="btn-brutal btn-brutal-sm bg-neutral-100 hover:bg-neutral-200 text-black text-xs flex items-center gap-1.5">
+            <iconify-icon icon="lucide:rotate-ccw" class="text-xs"></iconify-icon>
+            <span>Restore Backup</span>
+          </button>
+          <button id="btn-save-all" type="button" class="btn-brutal px-5 py-2.5 bg-[#FF6B6B] text-white text-xs gap-2 flex items-center">
+            <iconify-icon icon="lucide:save" class="text-sm"></iconify-icon>
+            <span>Simpan Perubahan</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Layout: Sidebar Tabs + Editor Form -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- SIDEBAR TABS -->
+        <aside class="lg:col-span-3 space-y-3">
+          <div class="card-brutal p-3 bg-white space-y-1.5">
+            <p class="text-[11px] font-black uppercase text-black/50 px-2 py-1">Kategori Konten</p>
+
+            <button type="button" onclick="switchTab('general')" id="tab-btn-general" 
+                    class="w-full text-left px-3 py-2.5 text-xs font-black uppercase border-2 border-black rounded-xl bg-[#FFD028] shadow-brutal-sm flex items-center justify-between transition-all">
+              <span class="flex items-center gap-2">
+                <iconify-icon icon="lucide:user" class="text-sm"></iconify-icon>
+                <span>1. Informasi Umum</span>
+              </span>
+              <iconify-icon icon="lucide:chevron-right" class="text-xs"></iconify-icon>
+            </button>
+
+            <button type="button" onclick="switchTab('socials')" id="tab-btn-socials" 
+                    class="w-full text-left px-3 py-2.5 text-xs font-black uppercase border-2 border-black rounded-xl bg-white hover:bg-[#F4F0EA] flex items-center justify-between transition-all">
+              <span class="flex items-center gap-2">
+                <iconify-icon icon="lucide:share-2" class="text-sm"></iconify-icon>
+                <span>2. Media Sosial</span>
+              </span>
+              <span id="badge-count-socials" class="text-[10px] bg-black text-white px-1.5 py-0.5 rounded font-mono">0</span>
+            </button>
+
+            <button type="button" onclick="switchTab('about')" id="tab-btn-about" 
+                    class="w-full text-left px-3 py-2.5 text-xs font-black uppercase border-2 border-black rounded-xl bg-white hover:bg-[#F4F0EA] flex items-center justify-between transition-all">
+              <span class="flex items-center gap-2">
+                <iconify-icon icon="lucide:file-text" class="text-sm"></iconify-icon>
+                <span>3. Tentang &amp; Skills</span>
+              </span>
+              <iconify-icon icon="lucide:chevron-right" class="text-xs"></iconify-icon>
+            </button>
+
+            <button type="button" onclick="switchTab('experience')" id="tab-btn-experience" 
+                    class="w-full text-left px-3 py-2.5 text-xs font-black uppercase border-2 border-black rounded-xl bg-white hover:bg-[#F4F0EA] flex items-center justify-between transition-all">
+              <span class="flex items-center gap-2">
+                <iconify-icon icon="lucide:briefcase" class="text-sm"></iconify-icon>
+                <span>4. Pengalaman Kerja</span>
+              </span>
+              <span id="badge-count-experience" class="text-[10px] bg-black text-white px-1.5 py-0.5 rounded font-mono">0</span>
+            </button>
+
+            <button type="button" onclick="switchTab('education')" id="tab-btn-education" 
+                    class="w-full text-left px-3 py-2.5 text-xs font-black uppercase border-2 border-black rounded-xl bg-white hover:bg-[#F4F0EA] flex items-center justify-between transition-all">
+              <span class="flex items-center gap-2">
+                <iconify-icon icon="lucide:graduation-cap" class="text-sm"></iconify-icon>
+                <span>5. Pendidikan</span>
+              </span>
+              <span id="badge-count-education" class="text-[10px] bg-black text-white px-1.5 py-0.5 rounded font-mono">0</span>
+            </button>
+
+            <button type="button" onclick="switchTab('projects')" id="tab-btn-projects" 
+                    class="w-full text-left px-3 py-2.5 text-xs font-black uppercase border-2 border-black rounded-xl bg-white hover:bg-[#F4F0EA] flex items-center justify-between transition-all">
+              <span class="flex items-center gap-2">
+                <iconify-icon icon="lucide:folder-git-2" class="text-sm"></iconify-icon>
+                <span>6. Portofolio &amp; Detail</span>
+              </span>
+              <span id="badge-count-projects" class="text-[10px] bg-black text-white px-1.5 py-0.5 rounded font-mono">0</span>
+            </button>
+
+            <button type="button" onclick="switchTab('services')" id="tab-btn-services" 
+                    class="w-full text-left px-3 py-2.5 text-xs font-black uppercase border-2 border-black rounded-xl bg-white hover:bg-[#F4F0EA] flex items-center justify-between transition-all">
+              <span class="flex items-center gap-2">
+                <iconify-icon icon="lucide:wrench" class="text-sm"></iconify-icon>
+                <span>7. Layanan Ditawarkan</span>
+              </span>
+              <span id="badge-count-services" class="text-[10px] bg-black text-white px-1.5 py-0.5 rounded font-mono">0</span>
+            </button>
+          </div>
+
+          <!-- Upload Quick Dropzone Info -->
+          <div class="card-brutal p-4 bg-[#4ECDC4] space-y-2">
+            <h4 class="font-heading font-black text-xs uppercase text-black flex items-center gap-1.5">
+              <iconify-icon icon="lucide:cloud-upload" class="text-sm"></iconify-icon>
+              <span>Media Assets Manager</span>
+            </h4>
+            <p class="text-[11px] text-black/85 font-medium leading-relaxed">
+              Semua gambar disimpan di folder lokal: <code>public/uploads/</code>.
+            </p>
+            <label class="btn-brutal btn-brutal-sm w-full bg-white text-black flex items-center justify-center gap-1.5 cursor-pointer">
+              <iconify-icon icon="lucide:upload" class="text-xs"></iconify-icon>
+              <span>Upload File Cepat</span>
+              <input type="file" id="quick-file-upload" class="hidden" accept="image/*,application/pdf">
+            </label>
+            <div id="quick-upload-result" class="text-[10px] font-bold break-all"></div>
+          </div>
+        </aside>
+
+        <!-- FORM CONTENT EDITOR -->
+        <div class="lg:col-span-9">
+          
+          <!-- TAB 1: GENERAL INFO -->
+          <section id="sec-general" class="card-brutal p-6 md:p-8 bg-white space-y-6">
+            <div class="border-b-2 border-black pb-4 flex items-center justify-between">
+              <div>
+                <h2 class="font-heading font-black text-xl md:text-2xl flex items-center gap-2">
+                  <iconify-icon icon="lucide:user" class="text-xl text-[#FF6B6B]"></iconify-icon>
+                  <span>1. Informasi Umum (General)</span>
+                </h2>
+                <p class="text-xs text-black/60 font-medium">Data utama yang ditampilkan pada hero banner dan kartu profil Anda.</p>
+              </div>
+              <span class="px-2.5 py-1 bg-[#FFD028] border border-black rounded text-[11px] font-black uppercase">Auto-Validate</span>
+            </div>
+
+            <!-- Avatar Preview & Upload -->
+            <div class="border-2 border-dashed border-black rounded-2xl p-5 bg-[#F4F0EA] flex flex-col sm:flex-row items-center gap-5">
+              <div class="w-24 h-24 rounded-2xl border-2 border-black overflow-hidden bg-white shadow-brutal-sm shrink-0">
+                <img id="edit-avatar-preview" src="/uploads/galih_photo.jpg" alt="Avatar" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 space-y-2 text-center sm:text-left">
+                <p class="font-heading font-black text-sm uppercase">Foto Profil Pengguna</p>
+                <p class="text-xs text-black/70">Upload gambar baru (PNG, JPG, WebP). File akan disimpan ke <code>public/uploads/</code>.</p>
+                <div class="flex flex-wrap items-center gap-2 justify-center sm:justify-start">
+                  <label class="btn-brutal btn-brutal-sm bg-[#FFD028] text-black cursor-pointer flex items-center gap-1.5">
+                    <iconify-icon icon="lucide:image" class="text-xs"></iconify-icon>
+                    <span>Pilih Foto Baru</span>
+                    <input type="file" id="input-avatar-file" class="hidden" accept="image/*">
+                  </label>
+                  <input type="text" id="edit-avatar-url" placeholder="/uploads/galih_photo.jpg" class="text-xs px-2.5 py-1.5 border border-black rounded-lg bg-white w-48 font-medium">
+                </div>
+              </div>
+            </div>
+
+            <!-- Fields Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-black uppercase mb-1">Nama Lengkap</label>
+                <input type="text" id="gen-name" class="w-full px-3 py-2 text-sm border-2 border-black rounded-xl bg-[#F4F0EA] focus:bg-white focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-black uppercase mb-1">Tagline / Profesi</label>
+                <input type="text" id="gen-title" class="w-full px-3 py-2 text-sm border-2 border-black rounded-xl bg-[#F4F0EA] focus:bg-white focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-black uppercase mb-1">Email</label>
+                <input type="email" id="gen-email" class="w-full px-3 py-2 text-sm border-2 border-black rounded-xl bg-[#F4F0EA] focus:bg-white focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-black uppercase mb-1">Nomor Telepon / WhatsApp</label>
+                <input type="text" id="gen-phone" class="w-full px-3 py-2 text-sm border-2 border-black rounded-xl bg-[#F4F0EA] focus:bg-white focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-black uppercase mb-1">Lokasi Domisili</label>
+                <input type="text" id="gen-location" class="w-full px-3 py-2 text-sm border-2 border-black rounded-xl bg-[#F4F0EA] focus:bg-white focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-black uppercase mb-1">Status Ketersediaan</label>
+                <input type="text" id="gen-availability" class="w-full px-3 py-2 text-sm border-2 border-black rounded-xl bg-[#F4F0EA] focus:bg-white focus:outline-none">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black uppercase mb-1">Bio Singkat (Hero)</label>
+              <textarea id="gen-bio" rows="3" class="w-full px-3 py-2 text-sm border-2 border-black rounded-xl bg-[#F4F0EA] focus:bg-white focus:outline-none leading-relaxed"></textarea>
+            </div>
+          </section>
+
+          <!-- TAB 2: SOCIALS (ARRAY CRUD) -->
+          <section id="sec-socials" class="hidden card-brutal p-6 md:p-8 bg-white space-y-6">
+            <div class="flex items-center justify-between border-b-2 border-black pb-4">
+              <div>
+                <h2 class="font-heading font-black text-xl md:text-2xl flex items-center gap-2">
+                  <iconify-icon icon="lucide:share-2" class="text-xl text-[#FF6B6B]"></iconify-icon>
+                  <span>2. Tautan Media Sosial</span>
+                </h2>
+                <p class="text-xs text-black/60 font-medium">Kelola link sosial seperti LinkedIn, GitHub, Email, dan WhatsApp.</p>
+              </div>
+              <button type="button" onclick="addSocialItem()" class="btn-brutal btn-brutal-sm bg-[#FFD028] text-black flex items-center gap-1.5">
+                <iconify-icon icon="lucide:plus" class="text-xs"></iconify-icon>
+                <span>Tambah Sosial</span>
+              </button>
+            </div>
+
+            <div id="socials-list-container" class="space-y-4">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </section>
+
+          <!-- TAB 3: ABOUT & SKILLS -->
+          <section id="sec-about" class="hidden card-brutal p-6 md:p-8 bg-white space-y-6">
+            <div class="border-b-2 border-black pb-4">
+              <h2 class="font-heading font-black text-xl md:text-2xl flex items-center gap-2">
+                <iconify-icon icon="lucide:file-text" class="text-xl text-[#FF6B6B]"></iconify-icon>
+                <span>3. Tentang Saya &amp; Kategori Keahlian</span>
+              </h2>
+              <p class="text-xs text-black/60 font-medium">Ubah deskripsi panjang, link CV, dan kelompok keahlian teknologi.</p>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black uppercase mb-1">Paragraf Deskripsi Panjang</label>
+              <textarea id="about-long-bio-input" rows="5" class="w-full px-3 py-2.5 text-sm border-2 border-black rounded-xl bg-[#F4F0EA] focus:bg-white leading-relaxed"></textarea>
+            </div>
+
+            <!-- CV Upload / Link -->
+            <div class="border-2 border-black rounded-xl p-4 bg-[#F4F0EA] space-y-2">
+              <label class="block text-xs font-black uppercase flex items-center gap-1.5">
+                <iconify-icon icon="lucide:file-check" class="text-sm"></iconify-icon>
+                <span>Tautan / File Dokumen CV</span>
+              </label>
+              <div class="flex flex-wrap items-center gap-3">
+                <input type="text" id="about-cv-url" class="flex-1 px-3 py-2 text-xs border border-black rounded-lg bg-white" placeholder="/uploads/cv.pdf">
+                <label class="btn-brutal btn-brutal-sm bg-[#4ECDC4] text-black cursor-pointer flex items-center gap-1.5">
+                  <iconify-icon icon="lucide:upload" class="text-xs"></iconify-icon>
+                  <span>Upload File PDF</span>
+                  <input type="file" id="input-cv-file" class="hidden" accept="application/pdf">
+                </label>
+              </div>
+            </div>
+
+            <!-- Skills Groups -->
+            <div class="space-y-4 pt-2">
+              <div class="flex items-center justify-between">
+                <h3 class="font-heading font-black text-lg flex items-center gap-2">
+                  <iconify-icon icon="lucide:code-2" class="text-base text-black"></iconify-icon>
+                  <span>Kelompok Keahlian (Skills)</span>
+                </h3>
+                <button type="button" onclick="addSkillGroup()" class="btn-brutal btn-brutal-sm bg-[#FFD028] text-black flex items-center gap-1.5">
+                  <iconify-icon icon="lucide:plus" class="text-xs"></iconify-icon>
+                  <span>Tambah Kategori Skill</span>
+                </button>
+              </div>
+              <div id="skills-list-container" class="space-y-4">
+                <!-- Rendered via JavaScript -->
+              </div>
+            </div>
+          </section>
+
+          <!-- TAB 4: EXPERIENCE (ARRAY CRUD) -->
+          <section id="sec-experience" class="hidden card-brutal p-6 md:p-8 bg-white space-y-6">
+            <div class="flex items-center justify-between border-b-2 border-black pb-4">
+              <div>
+                <h2 class="font-heading font-black text-xl md:text-2xl flex items-center gap-2">
+                  <iconify-icon icon="lucide:briefcase" class="text-xl text-[#FF6B6B]"></iconify-icon>
+                  <span>4. Riwayat Pengalaman Kerja</span>
+                </h2>
+                <p class="text-xs text-black/60 font-medium">Tambah, edit, hapus, dan atur urutan pengalaman kerja.</p>
+              </div>
+              <button type="button" onclick="addExperienceItem()" class="btn-brutal btn-brutal-sm bg-[#FF6B6B] text-white flex items-center gap-1.5">
+                <iconify-icon icon="lucide:plus" class="text-xs"></iconify-icon>
+                <span>Tambah Pengalaman</span>
+              </button>
+            </div>
+
+            <div id="experience-list-container" class="space-y-4">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </section>
+
+          <!-- TAB 5: EDUCATION (ARRAY CRUD) -->
+          <section id="sec-education" class="hidden card-brutal p-6 md:p-8 bg-white space-y-6">
+            <div class="flex items-center justify-between border-b-2 border-black pb-4">
+              <div>
+                <h2 class="font-heading font-black text-xl md:text-2xl flex items-center gap-2">
+                  <iconify-icon icon="lucide:graduation-cap" class="text-xl text-[#FF6B6B]"></iconify-icon>
+                  <span>5. Pendidikan &amp; Pelatihan</span>
+                </h2>
+                <p class="text-xs text-black/60 font-medium">Kelola data riwayat pendidikan formal dan sertifikasi.</p>
+              </div>
+              <button type="button" onclick="addEducationItem()" class="btn-brutal btn-brutal-sm bg-[#A78BFA] text-black flex items-center gap-1.5">
+                <iconify-icon icon="lucide:plus" class="text-xs"></iconify-icon>
+                <span>Tambah Pendidikan</span>
+              </button>
+            </div>
+
+            <div id="education-list-container" class="space-y-4">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </section>
+
+          <!-- TAB 6: PROJECTS (ARRAY CRUD & DEEP CASE STUDY) -->
+          <section id="sec-projects" class="hidden card-brutal p-6 md:p-8 bg-white space-y-6">
+            <div class="flex items-center justify-between border-b-2 border-black pb-4">
+              <div>
+                <h2 class="font-heading font-black text-xl md:text-2xl flex items-center gap-2">
+                  <iconify-icon icon="lucide:folder-git-2" class="text-xl text-[#FF6B6B]"></iconify-icon>
+                  <span>6. Portofolio &amp; Halaman Detail (Case Study)</span>
+                </h2>
+                <p class="text-xs text-black/60 font-medium">Kelola portofolio lengkap dengan rincian case study, metrik terukur, tantangan, dan solusi.</p>
+              </div>
+              <button type="button" onclick="addProjectItem()" class="btn-brutal btn-brutal-sm bg-[#FFD028] text-black flex items-center gap-1.5">
+                <iconify-icon icon="lucide:plus" class="text-xs"></iconify-icon>
+                <span>Tambah Proyek</span>
+              </button>
+            </div>
+
+            <div id="projects-list-container" class="space-y-6">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </section>
+
+          <!-- TAB 7: SERVICES (ARRAY CRUD) -->
+          <section id="sec-services" class="hidden card-brutal p-6 md:p-8 bg-white space-y-6">
+            <div class="flex items-center justify-between border-b-2 border-black pb-4">
+              <div>
+                <h2 class="font-heading font-black text-xl md:text-2xl flex items-center gap-2">
+                  <iconify-icon icon="lucide:wrench" class="text-xl text-[#FF6B6B]"></iconify-icon>
+                  <span>7. Layanan Yang Ditawarkan</span>
+                </h2>
+                <p class="text-xs text-black/60 font-medium">Daftar keahlian dan jasa yang Anda tawarkan untuk klien atau pemberi kerja.</p>
+              </div>
+              <button type="button" onclick="addServiceItem()" class="btn-brutal btn-brutal-sm bg-[#FFD028] text-black flex items-center gap-1.5">
+                <iconify-icon icon="lucide:plus" class="text-xs"></iconify-icon>
+                <span>Tambah Layanan</span>
+              </button>
+            </div>
+
+            <div id="services-list-container" class="space-y-4">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </section>
+
+          <!-- Bottom Action Buttons -->
+          <div class="pt-6 border-t-2 border-black flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs font-bold text-black/70">
+              Jangan lupa klik <strong>Simpan Perubahan</strong> untuk menulis perubahan ke <code>data/profile.json</code>.
+            </span>
+            <button type="button" id="btn-save-bottom" class="btn-brutal px-6 py-3 bg-[#FF6B6B] text-white text-sm gap-2 flex items-center">
+              <iconify-icon icon="lucide:save" class="text-base"></iconify-icon>
+              <span>Simpan Semua Perubahan</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galih Wahyu Utomo | Frontend Engineer & UI Designer</title>
+  <meta name="description" content="Portofolio resmi Galih Wahyu Utomo — Frontend Engineer berpengalaman dalam membangun aplikasi web modern, optimasi Core Web Vitals (Lighthouse 99), dan UI/UX berkarakter.">
+  <meta name="author" content="Galih Wahyu Utomo">
+
+  <!-- Tailwind CSS & Custom Stylesheet -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Iconify Web Component -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Favicon icon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23000%22 stroke-width=%222%22><polygon points=%2213 2 3 14 12 14 11 22 21 10 12 10 13 2%22/></svg>">
+  <style>
+    iconify-icon {
+      display: inline-flex;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-[#F4F0EA] text-black min-h-screen flex flex-col selection:bg-[#FFD028] selection:text-black">
+
+  <!-- HEADER / STICKY NAVBAR -->
+  <header class="sticky top-0 z-50 w-full border-b-[3px] border-black bg-[#F4F0EA]/95 backdrop-blur-md px-4 py-3 md:px-8">
+    <div class="mx-auto flex max-w-6xl items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <div class="bg-[#FFD028] p-1.5 border-2 border-black shadow-brutal-sm rounded-lg group-hover:rotate-6 transition-transform">
+          <svg class="h-5 w-5 stroke-[2.5]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+        </div>
+        <span class="font-heading text-lg md:text-xl font-black tracking-tight text-black">
+          GALIH<span class="text-[#FF6B6B]">WAHYU</span><span class="text-xs ml-1 px-1.5 py-0.5 bg-black text-[#FFD028] rounded font-bold">.dev</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-6 font-bold text-sm">
+        <a href="#about" class="hover:text-[#FF6B6B] transition-colors py-1">Tentang</a>
+        <a href="#skills" class="hover:text-[#FF6B6B] transition-colors py-1">Keahlian</a>
+        <a href="#experience" class="hover:text-[#FF6B6B] transition-colors py-1">Pengalaman</a>
+        <a href="#projects" class="hover:text-[#FF6B6B] transition-colors py-1">Portofolio</a>
+        <a href="#services" class="hover:text-[#FF6B6B] transition-colors py-1">Layanan</a>
+        <a href="#contact" class="btn-brutal btn-brutal-sm bg-[#FF6B6B] text-white">
+          Hubungi Saya
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 border-2 border-black rounded-lg bg-white shadow-brutal-sm">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t-2 border-black mt-3 pt-3 pb-2 space-y-2">
+      <a href="#about" class="block px-3 py-2 font-bold hover:bg-[#FFD028] rounded-lg">Tentang</a>
+      <a href="#skills" class="block px-3 py-2 font-bold hover:bg-[#FFD028] rounded-lg">Keahlian</a>
+      <a href="#experience" class="block px-3 py-2 font-bold hover:bg-[#FFD028] rounded-lg">Pengalaman</a>
+      <a href="#projects" class="block px-3 py-2 font-bold hover:bg-[#FFD028] rounded-lg">Portofolio</a>
+      <a href="#services" class="block px-3 py-2 font-bold hover:bg-[#FFD028] rounded-lg">Layanan</a>
+      <a href="#contact" class="block px-3 py-2 font-black text-center bg-[#FF6B6B] text-white rounded-lg border-2 border-black shadow-brutal-sm">
+        Hubungi Saya
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 md:px-8 py-10 space-y-20">
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pt-2 md:pt-6">
+      
+      <!-- Left Column: Copy & Actions -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Status Availability Pill -->
+        <!-- <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-emerald-100 border-2 border-black rounded-full shadow-brutal-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 brutal-pulse-dot"></span>
+          <span id="hero-availability" class="text-xs font-black uppercase text-emerald-950 tracking-wider">
+            Tersedia untuk Pekerjaan / Freelance
+          </span>
+        </div> -->
+
+        <!-- Main Title & Tagline -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.08] text-black">
+          Membangun Web <span class="bg-[#FFD028] px-2.5 py-0.5 border-2 border-black shadow-brutal-sm inline-block rotate-[-1.5deg]">Super Cepat</span> &amp; UI Berkarakter.
+        </h1>
+
+        <!-- Short Bio -->
+        <p id="hero-bio" class="text-base md:text-lg text-black/85 font-medium leading-relaxed max-w-xl">
+          Halo! Saya <strong id="hero-name">Galih Wahyu Utomo</strong>, Frontend Engineer dengan spesialisasi performa web mutakhir (Google Lighthouse 99), SEO modern, dan pengalaman pengguna interaktif.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="#projects" class="btn-brutal px-6 py-3 bg-[#FF6B6B] text-white text-sm gap-2">
+            <span>Lihat Portofolio</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a id="hero-cv-btn" href="#" target="_blank" class="btn-brutal px-5 py-3 bg-white text-black text-sm gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>Unduh Resume / CV</span>
+          </a>
+        </div>
+
+        <!-- Social Media Badges -->
+        <div class="pt-2 flex items-center gap-3">
+          <span class="text-xs font-black uppercase text-black/60">Sosial:</span>
+          <div id="hero-socials" class="flex flex-wrap items-center gap-2.5">
+            <!-- Dynamic Social Badges -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Neo-Brutalist Frame Photo of Galih -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative w-full max-w-sm sm:max-w-md">
+          <!-- Offset Background Card -->
+          <div class="absolute inset-0 bg-[#FFD028] border-[3px] border-black rounded-3xl transform rotate-3 shadow-brutal"></div>
+          
+          <!-- Foreground Photo Card -->
+          <div class="relative bg-white border-[3px] border-black rounded-3xl p-4 shadow-brutal-lg transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+            <div class="aspect-[3/4] w-full rounded-2xl overflow-hidden border-2 border-black bg-neutral-100 relative group">
+              <img id="hero-avatar" src="/uploads/galih_photo.jpg" alt="Foto Profil Galih Wahyu Utomo" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+              
+              <!-- Floating Corner Badge -->
+              <div class="absolute bottom-3 right-3 bg-[#4ECDC4] border-2 border-black px-3 py-1 rounded-xl shadow-brutal-sm text-xs font-black uppercase text-black flex items-center gap-1.5">
+                <iconify-icon icon="lucide:zap" class="text-sm text-black"></iconify-icon>
+                <span>Lighthouse 99</span>
+              </div>
+            </div>
+
+            <!-- Card Bottom Bar -->
+            <div class="mt-4 flex items-center justify-between px-1">
+              <div>
+                <p id="hero-card-name" class="font-heading font-black text-lg text-black leading-tight">Galih Wahyu Utomo</p>
+                <p id="hero-card-role" class="text-xs font-bold text-black/70">Frontend Engineer &amp; UI Designer</p>
+              </div>
+              <span class="px-2.5 py-1 bg-[#F4F0EA] border-2 border-black rounded-lg text-xs font-black">
+                Surakarta, ID
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 2. BENTO STATS / HIGHLIGHTS SECTION -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="card-brutal p-5 text-center bg-[#FFD028] space-y-1">
+        <p class="font-heading font-black text-3xl md:text-4xl text-black">99</p>
+        <p class="text-xs font-black uppercase tracking-wider text-black">Skor Lighthouse</p>
+      </div>
+      <div class="card-brutal p-5 text-center bg-white space-y-1">
+        <p class="font-heading font-black text-3xl md:text-4xl text-[#FF6B6B]">40–60%</p>
+        <p class="text-xs font-black uppercase tracking-wider text-black/70">Load Time Reduced</p>
+      </div>
+      <div class="card-brutal p-5 text-center bg-[#4ECDC4] space-y-1">
+        <p class="font-heading font-black text-3xl md:text-4xl text-black">3.80</p>
+        <p class="text-xs font-black uppercase tracking-wider text-black">IPK Sarjana Komputer</p>
+      </div>
+      <div class="card-brutal p-5 text-center bg-white space-y-1">
+        <p class="font-heading font-black text-3xl md:text-4xl text-black">1+ Th</p>
+        <p class="text-xs font-black uppercase tracking-wider text-black/70">Pengalaman Industri</p>
+      </div>
+    </section>
+
+    <!-- 3. ABOUT SECTION -->
+    <section id="about" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="p-2 bg-[#FF6B6B] text-white border-2 border-black rounded-lg shadow-brutal-sm font-black text-sm">01</span>
+        <h2 class="font-heading text-2xl md:text-3xl font-black uppercase tracking-tight">Tentang Saya</h2>
+        <div class="h-[3px] flex-1 bg-black"></div>
+      </div>
+
+      <div class="card-brutal p-6 md:p-8 space-y-4">
+        <p id="about-long-bio" class="text-base md:text-lg leading-relaxed text-black/90 font-medium">
+          <!-- Populated from API -->
+        </p>
+        
+        <div class="pt-4 border-t-2 border-black flex flex-wrap items-center justify-between gap-4 text-xs font-bold text-black/80">
+          <div class="flex items-center gap-2">
+            <iconify-icon icon="lucide:map-pin" class="text-sm text-[#FF6B6B]"></iconify-icon>
+            <span>Lokasi: <strong id="about-location">Surakarta, Jawa Tengah, Indonesia</strong></span>
+          </div>
+          <div class="flex items-center gap-2">
+            <iconify-icon icon="lucide:mail" class="text-sm text-[#FF6B6B]"></iconify-icon>
+            <span>Email: <strong id="about-email">galihwu2@gmail.com</strong></span>
+          </div>
+          <div class="flex items-center gap-2">
+            <iconify-icon icon="lucide:phone" class="text-sm text-[#FF6B6B]"></iconify-icon>
+            <span>Kontak: <strong id="about-phone">+62 857-9921-5319</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SKILLS SECTION -->
+    <section id="skills" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="p-2 bg-[#FFD028] text-black border-2 border-black rounded-lg shadow-brutal-sm font-black text-sm">02</span>
+        <h2 class="font-heading text-2xl md:text-3xl font-black uppercase tracking-tight">Keahlian &amp; Teknologi</h2>
+        <div class="h-[3px] flex-1 bg-black"></div>
+      </div>
+
+      <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Dynamic Skill Groups -->
+      </div>
+    </section>
+
+    <!-- 5. WORK EXPERIENCE SECTION -->
+    <section id="experience" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="p-2 bg-[#4ECDC4] text-black border-2 border-black rounded-lg shadow-brutal-sm font-black text-sm">03</span>
+        <h2 class="font-heading text-2xl md:text-3xl font-black uppercase tracking-tight">Pengalaman Kerja</h2>
+        <div class="h-[3px] flex-1 bg-black"></div>
+      </div>
+
+      <div id="experience-container" class="space-y-4">
+        <!-- Dynamic Experience Cards -->
+      </div>
+    </section>
+
+    <!-- 6. EDUCATION SECTION -->
+    <section id="education" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="p-2 bg-[#A78BFA] text-black border-2 border-black rounded-lg shadow-brutal-sm font-black text-sm">04</span>
+        <h2 class="font-heading text-2xl md:text-3xl font-black uppercase tracking-tight">Pendidikan &amp; Pelatihan</h2>
+        <div class="h-[3px] flex-1 bg-black"></div>
+      </div>
+
+      <div id="education-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Dynamic Education Cards -->
+      </div>
+    </section>
+
+    <!-- 7. FEATURED PROJECTS (PORTOFOLIO) WITH DETAILED CASE STUDY LINKS -->
+    <section id="projects" class="space-y-6">
+      <div class="flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="p-2 bg-[#FF6B6B] text-white border-2 border-black rounded-lg shadow-brutal-sm font-black text-sm">05</span>
+          <h2 class="font-heading text-2xl md:text-3xl font-black uppercase tracking-tight">Portofolio Unggulan</h2>
+        </div>
+        <span class="text-xs font-bold bg-[#FFD028] border-2 border-black px-3 py-1 rounded-lg shadow-brutal-sm hidden sm:inline-block">
+          Klik untuk Halaman Detail / Case Study
+        </span>
+      </div>
+      <div class="h-[3px] w-full bg-black"></div>
+
+      <!-- Project Cards Grid -->
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Dynamic Project Cards -->
+      </div>
+    </section>
+
+    <!-- 8. SERVICES SECTION -->
+    <section id="services" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="p-2 bg-[#FFD028] text-black border-2 border-black rounded-lg shadow-brutal-sm font-black text-sm">06</span>
+        <h2 class="font-heading text-2xl md:text-3xl font-black uppercase tracking-tight">Layanan Yang Ditawarkan</h2>
+        <div class="h-[3px] flex-1 bg-black"></div>
+      </div>
+
+      <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Dynamic Services Cards -->
+      </div>
+    </section>
+
+    <!-- 9. CONTACT SECTION -->
+    <section id="contact" class="card-brutal p-8 md:p-12 bg-[#FFD028] border-[3px] border-black text-black space-y-6">
+      <div class="max-w-2xl space-y-3">
+        <span class="px-3 py-1 bg-black text-[#FFD028] text-xs font-black uppercase rounded-lg">Siap Berkolaborasi</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-black">Mari Wujudkan Web Berkecepatan Tinggi Bersama.</h2>
+        <p class="text-sm md:text-base font-medium text-black/85">
+          Tertarik merekrut saya sebagai Frontend Engineer atau mendiskusikan optimasi performa web Anda? Hubungi saya secara langsung melalui salah satu saluran berikut:
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 pt-2">
+        <a id="contact-email-btn" href="mailto:galihwu2@gmail.com" class="btn-brutal px-5 py-3 bg-[#FF6B6B] text-white text-xs md:text-sm flex items-center gap-2">
+          <iconify-icon icon="lucide:mail" class="text-base"></iconify-icon>
+          <span>Kirim Email Sekarang</span>
+        </a>
+        <a id="contact-wa-btn" href="https://wa.me/6285799215319" target="_blank" class="btn-brutal px-5 py-3 bg-white text-black text-xs md:text-sm flex items-center gap-2">
+          <iconify-icon icon="lucide:message-circle" class="text-base"></iconify-icon>
+          <span>Chat via WhatsApp</span>
+        </a>
+        <a id="contact-linkedin-btn" href="https://linkedin.com/in/galihwu2" target="_blank" class="btn-brutal px-5 py-3 bg-white text-black text-xs md:text-sm flex items-center gap-2">
+          <iconify-icon icon="lucide:linkedin" class="text-base"></iconify-icon>
+          <span>Profil LinkedIn</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full border-t-[3px] border-black bg-white py-8 px-4 md:px-8 mt-16">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-heading font-black text-sm">GALIH WAHYU UTOMO</span>
+        <span class="text-xs text-black/60">• © 2026 All Rights Reserved</span>
+      </div>
+      
+      <!-- <div class="flex items-center gap-4 text-xs font-bold">
+        <span class="text-black/60">Ditenagai oleh Local JSON Engine</span>
+        <span class="text-black/30">|</span>
+        <a href="/admin" class="btn-brutal-sm bg-[#FFD028] text-black font-black flex items-center gap-1.5">
+          <iconify-icon icon="lucide:lock" class="text-xs"></iconify-icon>
+          <span>Admin Panel CMS</span>
+        </a>
+      </div> -->
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Hydration -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

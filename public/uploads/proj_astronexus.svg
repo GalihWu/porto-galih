@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <rect width="800" height="450" fill="#F4F0EA"/>
+  <defs>
+    <pattern id="grid-astro" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E2DACD" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grid-astro)" />
+  
+  <rect x="50" y="40" width="700" height="370" rx="16" fill="#4ECDC4" stroke="#000000" stroke-width="4"/>
+  <rect x="46" y="36" width="700" height="370" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  
+  <rect x="46" y="36" width="700" height="48" rx="16" fill="#000000"/>
+  <rect x="46" y="60" width="700" height="24" fill="#000000"/>
+  <circle cx="76" cy="60" r="7" fill="#FF6B6B" stroke="#000" stroke-width="1.5"/>
+  <circle cx="98" cy="60" r="7" fill="#FFD028" stroke="#000" stroke-width="1.5"/>
+  <circle cx="120" cy="60" r="7" fill="#4ECDC4" stroke="#000" stroke-width="1.5"/>
+  <text x="710" y="66" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-weight="bold" font-size="14" text-anchor="end">ASTRO ISLANDS ARCHITECTURE</text>
+  
+  <!-- Content Area -->
+  <g transform="translate(90, 120)">
+    <rect x="0" y="0" width="190" height="220" rx="12" fill="#FEF3C7" stroke="#000000" stroke-width="3"/>
+    <polygon points="95,30 135,110 55,110" fill="#FF6B6B" stroke="#000" stroke-width="3"/>
+    <circle cx="95" cy="85" r="14" fill="#FFD028" stroke="#000" stroke-width="2"/>
+    <text x="95" y="150" fill="#000000" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="28" text-anchor="middle">0.6s</text>
+    <text x="95" y="172" fill="#000000" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold" font-size="12" text-anchor="middle">SUB-SECOND LCP</text>
+    <rect x="25" y="188" width="140" height="22" rx="4" fill="#4ECDC4" stroke="#000" stroke-width="1.5"/>
+    <text x="95" y="203" fill="#000000" font-family="'Space Grotesk', sans-serif" font-weight="bold" font-size="11" text-anchor="middle">ZERO JS DEFAULT</text>
+  </g>
+  
+  <text x="320" y="150" fill="#FF6B6B" font-family="'Space Grotesk', sans-serif" font-weight="bold" font-size="16">HEADLESS E-COMMERCE</text>
+  <text x="320" y="195" fill="#000000" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="28">AstroNexus High-Speed Store</text>
+  
+  <rect x="320" y="225" width="400" height="4" fill="#000000"/>
+  
+  <rect x="320" y="250" width="180" height="45" rx="8" fill="#F4F0EA" stroke="#000" stroke-width="2"/>
+  <text x="335" y="268" fill="#666" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">SEO SCORE</text>
+  <text x="335" y="285" fill="#000" font-family="'Space Grotesk', sans-serif" font-weight="bold" font-size="14">100 / 100 Perfect</text>
+
+  <rect x="520" y="250" width="180" height="45" rx="8" fill="#F4F0EA" stroke="#000" stroke-width="2"/>
+  <text x="535" y="268" fill="#666" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">JS PAYLOAD REDUCTION</text>
+  <text x="535" y="285" fill="#000" font-family="'Space Grotesk', sans-serif" font-weight="bold" font-size="14">-75% Lightweight</text>
+
+  <rect x="320" y="315" width="80" height="26" rx="4" fill="#4ECDC4" stroke="#000" stroke-width="1.5"/>
+  <text x="360" y="332" fill="#000" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold" font-size="11" text-anchor="middle">Astro</text>
+  <rect x="410" y="315" width="95" height="26" rx="4" fill="#4ECDC4" stroke="#000" stroke-width="1.5"/>
+  <text x="457" y="332" fill="#000" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold" font-size="11" text-anchor="middle">TypeScript</text>
+  <rect x="515" y="315" width="115" height="26" rx="4" fill="#4ECDC4" stroke="#000" stroke-width="1.5"/>
+  <text x="572" y="332" fill="#000" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold" font-size="11" text-anchor="middle">SEO Schema</text>
+</svg>

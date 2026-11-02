@@ -1,0 +1,308 @@
+{
+  "general": {
+    "name": "Galih Wahyu Utomo",
+    "title": "Frontend Engineer & UI Designer",
+    "bio": "Frontend Engineer dengan pengalaman 1+ tahun dalam membangun dan mengoptimalkan aplikasi web modern. Berfokus pada peningkatan performa, SEO, dan user experience dengan hasil terukur seperti skor Lighthouse 99.",
+    "email": "galihwu2@gmail.com",
+    "phone": "+62 857-9921-5319",
+    "location": "Surakarta, Jawa Tengah, Indonesia",
+    "availability": "Tersedia untuk Pekerjaan / Freelance",
+    "avatar_url": "/uploads/photo-1793540919261-3052.jpeg"
+  },
+  "socials": [
+    {
+      "id": "soc-1",
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/galihwu2",
+      "icon": "linkedin"
+    },
+    {
+      "id": "soc-2",
+      "platform": "GitHub",
+      "url": "https://github.com/galihwu2",
+      "icon": "github"
+    },
+    {
+      "id": "soc-3",
+      "platform": "Email",
+      "url": "mailto:galihwu2@gmail.com",
+      "icon": "mail"
+    },
+    {
+      "id": "soc-4",
+      "platform": "WhatsApp",
+      "url": "https://wa.me/6285799215319",
+      "icon": "phone"
+    }
+  ],
+  "about": {
+    "long_bio": "Saya adalah Frontend Engineer yang berfokus pada pembangunan dan optimasi aplikasi web modern berkecepatan tinggi. Berpengalaman menggunakan React.js, Vue.js, dan Astro dalam membangun arsitektur scalable, serta mengimplementasikan teknik optimasi performa mutakhir seperti ISR (Incremental Static Regeneration), asset lazy loading, dan code splitting. Memiliki rekam jejak terbukti dalam meningkatkan skor Google Lighthouse dari kisaran ~70 menjadi 99, serta memangkas waktu muat halaman hingga 40–60%.",
+    "skills": [
+      {
+        "category": "Frontend Frameworks",
+        "items": [
+          "React.js",
+          "Vue.js",
+          "Astro",
+          "HTML5 Semantic"
+        ]
+      },
+      {
+        "category": "Bahasa Pemrograman",
+        "items": [
+          "JavaScript (ESNext)",
+          "TypeScript"
+        ]
+      },
+      {
+        "category": "Styling & UI",
+        "items": [
+          "TailwindCSS",
+          "Neo-Brutalism UI",
+          "CSS Modules",
+          "Responsive Design"
+        ]
+      },
+      {
+        "category": "Performance & SEO",
+        "items": [
+          "Lighthouse 99 Auditing",
+          "Core Web Vitals",
+          "Lazy Loading",
+          "ISR",
+          "Code Splitting"
+        ]
+      },
+      {
+        "category": "Tools & Integrasi",
+        "items": [
+          "Git / GitHub",
+          "Figma",
+          "REST API Integration",
+          "Vite",
+          "JSON Engine"
+        ]
+      },
+      {
+        "category": "Soft Skills",
+        "items": [
+          "Problem Solving",
+          "Communication",
+          "Team Collaboration",
+          "Adaptability"
+        ]
+      }
+    ],
+    "cv_url": "/uploads/cv_galih_wahyu_utomo.pdf"
+  },
+  "education": [
+    {
+      "id": "edu-1",
+      "institution": "STMIK Sinar Nusantara",
+      "degree": "Sarjana Informatika",
+      "period": "Okt 2020 - Sep 2024",
+      "grade": "IPK 3.80",
+      "description": "Lulus dengan predikat sangat memuaskan, fokus pada rekayasa perangkat lunak web dan sistem informasi cerdas."
+    },
+    {
+      "id": "edu-2",
+      "institution": "MSIB - Kampus Merdeka",
+      "degree": "Front-End Engineer Career With ReactJS",
+      "period": "Pelatihan Intensif Bersertifikat",
+      "grade": "Sertifikat Kelulusan",
+      "description": "Pelatihan intensif spesialisasi pengembangan frontend berbasis React.js, Redux, SPA architecture, dan integrasi REST API."
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "role": "Front End Web Developer & Design UI",
+      "company": "Digimedia Siber Optima",
+      "period": "Okt 2024 - Sekarang",
+      "description": "Meningkatkan skor performa website dari ~70 ke 99 (Google Lighthouse) melalui optimasi asset, lazy loading, dan ISR. Mengurangi waktu load halaman hingga 40–60%, mengimplementasikan SEO best practices untuk visibilitas halaman, mengembangkan fitur UI baru yang menaikkan user engagement, dan berkolaborasi erat dengan tim backend dalam integrasi REST API."
+    },
+    {
+      "id": "exp-2",
+      "role": "Pekerja Lepas (Frontend Developer)",
+      "company": "ErGe Event",
+      "period": "Juli 2024 - Nov 2024",
+      "description": "Mengembangkan mini-game interaktif berbasis web untuk event booth yang sukses meningkatkan interaksi dan engagement pengunjung. Mengoptimalkan performa aplikasi dengan mobile-first approach agar berjalan mulus di berbagai perangkat dan menangani proses deployment serta troubleshooting secara mandiri."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "slug": "oceanpulse-web-performance-engine",
+      "title": "OceanPulse Web Performance Engine",
+      "category": "Web Performance & Analytics",
+      "description": "Platform audit dan analitik Core Web Vitals otomatis yang memangkas waktu muat hingga 58% dan mencapai skor Google Lighthouse 99.",
+      "image_url": "/uploads/proj_oceanpulse.svg",
+      "live_link": "https://github.com/galihwu2",
+      "github_link": "https://github.com/galihwu2",
+      "tech_stack": [
+        "React.js",
+        "TypeScript",
+        "TailwindCSS",
+        "REST API",
+        "Core Web Vitals"
+      ],
+      "case_study": {
+        "client": "Digimedia Siber Optima & Internal Benchmarking",
+        "duration": "3 Bulan (2024)",
+        "role": "Lead Frontend Engineer",
+        "overview": "OceanPulse adalah platform pemantauan performa web mutakhir yang dirancang untuk mendeteksi bottleneck aset, layout shift yang tidak diinginkan, serta skrip pihak ketiga yang memblokir rendering utama browser.",
+        "challenges": "Website sebelumnya memiliki waktu rendering lambat (LCP > 3.8s) dan banyak gambar tidak teroptimasi yang menyebabkan skor Lighthouse berada di angka ~70.",
+        "solution": "Menerapkan arsitektur ISR (Incremental Static Regeneration), tree-shaking mendalam, konversi gambar otomatis ke WebP/AVIF dengan lazy loading, serta pemisahan chunk JavaScript (code splitting).",
+        "metrics": [
+          "Skor Google Lighthouse: 99 / 100",
+          "Waktu muat halaman berkurang 58%",
+          "LCP (Largest Contentful Paint) < 0.9 detik",
+          "CLS (Cumulative Layout Shift) stabil di 0.00"
+        ],
+        "features": [
+          "Dashboard pemantauan Core Web Vitals real-time",
+          "Rekomendasi optimasi gambar dan skrip otomatis",
+          "Audit metrik FCP, LCP, CLS, dan INP",
+          "Laporan ekspor format PDF & JSON untuk stakeholder"
+        ]
+      }
+    },
+    {
+      "id": "proj-2",
+      "slug": "abyssal-echoes-3d-minigame",
+      "title": "Abyssal Echoes 3D Interactive Game",
+      "category": "Interactive Web & Mini-Game",
+      "description": "Mini-game interaktif 3D ringan berbasis browser untuk kebutuhan booth exhibition dengan framerate stabil 60 FPS pada perangkat mobile.",
+      "image_url": "/uploads/proj_abyssal.svg",
+      "live_link": "https://github.com/galihwu2",
+      "github_link": "https://github.com/galihwu2",
+      "tech_stack": [
+        "Vue.js 3",
+        "Three.js",
+        "WebGL",
+        "GSAP",
+        "TailwindCSS"
+      ],
+      "case_study": {
+        "client": "ErGe Event Production",
+        "duration": "4 Bulan (2024)",
+        "role": "Frontend & Creative Developer",
+        "overview": "Aplikasi game interaktif bertema kedalaman samudera yang dioperasikan pada tablet dan layar sentuh booth promosi acara fisik. Tujuannya adalah menarik pengunjung booth dan mendistribusikan voucher hadiah digital.",
+        "challenges": "Perangkat tablet di lokasi pameran memiliki spesifikasi bervariasi dan koneksi internet terbatas, sehingga game harus memiliki ukuran bundle sangat kecil (<2MB) dan rendering visual 3D yang ringan.",
+        "solution": "Mengoptimalkan pipeline rendering WebGL, menggunakan low-poly 3D models dengan texture atlas, serta memanfaatkan instancing geometry untuk menjaga rendering tetap stabil di 60 FPS tanpa lag.",
+        "metrics": [
+          "Ukuran initial asset bundle di bawah 1.8 MB",
+          "Konsisten 60 FPS pada perangkat mobile / tablet",
+          "Menaikkan retensi pengunjung booth hingga 2.5x lipat",
+          "Zero crash selama 5 hari event berlangsung"
+        ],
+        "features": [
+          "Kontrol interaktif sentuhan layar responsif",
+          "Animasi fluida dengan GSAP & WebGL Shaders",
+          "Sistem scoring dan reward voucher QR Code",
+          "Offline-first caching capability untuk booth darurat"
+        ]
+      }
+    },
+    {
+      "id": "proj-3",
+      "slug": "astronexus-headless-storefront",
+      "title": "AstroNexus Headless Storefront",
+      "category": "E-Commerce & High-Speed Web",
+      "description": "Storefront e-commerce generasi baru dengan arsitektur Astro Islands, menghadirkan instant navigation dan zero JavaScript payload default.",
+      "image_url": "/uploads/proj_astronexus.svg",
+      "live_link": "https://github.com/galihwu2",
+      "github_link": "https://github.com/galihwu2",
+      "tech_stack": [
+        "Astro",
+        "TypeScript",
+        "TailwindCSS",
+        "Edge API",
+        "SEO Semantics"
+      ],
+      "case_study": {
+        "client": "Modern E-Commerce Merchant",
+        "duration": "2 Bulan (2024)",
+        "role": "Frontend Architect",
+        "overview": "Pengembangan etalase belanja headless berkecepatan sub-detik untuk brand ritel modern. Fokus utama adalah meningkatkan rasio konversi checkout dengan mengeliminasi jeda navigasi halaman.",
+        "challenges": "Aplikasi e-commerce berbasis SPA tradisional seringkali mengalami waktu *Time to Interactive* (TTI) yang lambat pada ponsel kelas menengah ke bawah.",
+        "solution": "Membangun dengan Astro Islands, di mana komponen interaktif (seperti keranjang belanja dan filter) hanya di-hydrate ketika terlihat di viewport (*client:visible*). Halaman statis disajikan murni dalam format HTML semantik super ringan.",
+        "metrics": [
+          "Skor Google Lighthouse Desktop: 100 / 100",
+          "Largest Contentful Paint: 0.6 detik",
+          "Skor SEO 100 dengan schema markup JSON-LD lengkap",
+          "JavaScript payload berkurang 75% dibanding toko sebelumnya"
+        ],
+        "features": [
+          "Katalog produk dengan filter dinamis instan",
+          "Shopping cart interaktif dengan penyimpanan lokal sinkron",
+          "Optimasi SEO terstruktur untuk Rich Google Snippets",
+          "Dukungan mode gelap dan responsivitas penuh"
+        ]
+      }
+    },
+    {
+      "id": "proj-4",
+      "slug": "aquaui-design-system",
+      "title": "AquaUI Modern Design System",
+      "category": "UI Library & Component System",
+      "description": "Pustaka komponen antarmuka modular yang mudah digunakan ulang, mematuhi standar aksesibilitas WCAG AAA dan didokumentasikan lengkap.",
+      "image_url": "/uploads/proj_aquaui.svg",
+      "live_link": "https://github.com/galihwu2",
+      "github_link": "https://github.com/galihwu2",
+      "tech_stack": [
+        "Vue.js 3",
+        "TailwindCSS",
+        "Vite",
+        "Storybook",
+        "Figma"
+      ],
+      "case_study": {
+        "client": "Open Source & Developer Community",
+        "duration": "Continuous Development",
+        "role": "UI Designer & Maintainer",
+        "overview": "Sistem desain antarmuka berbasis komponen modular yang mengintegrasikan estetika Neo-Brutalism dengan prinsip ergonomi modern. Ditujukan untuk mempercepat pengembangan UI tanpa kompromi kualitas aksesibilitas.",
+        "challenges": "Banyak library UI memiliki ukuran paket berlebihan (*bundle bloat*) dan sulit dikustomisasi dengan gaya desain non-konvensional.",
+        "solution": "Membangun komponen tanpa dependensi eksternal berlebih, memanfaatkan utility class Tailwind, dan menyediakan dukungan keyboard navigation serta atribut ARIA lengkap.",
+        "metrics": [
+          "Kepatuhan Aksesibilitas WCAG 2.1 Level AAA",
+          "Ukuran bundle total < 15 KB gzipped",
+          "Digunakan pada 5+ proyek web produksi internal",
+          "Dukungan penuh TypeScript types untuk semua props"
+        ],
+        "features": [
+          "30+ Komponen siap pakai (Buttons, Cards, Inputs, Modals, Toasts)",
+          "Dokumentasi interaktif dengan Storybook",
+          "Tema kustomisasi berbasis CSS Custom Properties",
+          "Fokus visual tinggi untuk keyboard navigation"
+        ]
+      }
+    }
+  ],
+  "services": [
+    {
+      "id": "srv-1",
+      "name": "Web Performance & Core Web Vitals",
+      "description": "Optimasi performa halaman web menyeluruh: peningkatan skor Lighthouse hingga 99, pemangkasan load time 40–60%, lazy loading aset, dan implementasi ISR.",
+      "icon": "zap"
+    },
+    {
+      "id": "srv-2",
+      "name": "Modern Frontend Web Development",
+      "description": "Pengembangan aplikasi web berbasis React.js, Vue.js, atau Astro dengan arsitektur scalable, TypeScript, dan integrasi REST API yang kokoh.",
+      "icon": "code"
+    },
+    {
+      "id": "srv-3",
+      "name": "UI/UX Design & Semantic Implementation",
+      "description": "Penerjemahan desain Figma ke kode web responsif berkarakter (Neo-Brutalism, Clean Modern) dengan struktur semantik HTML5 dan TailwindCSS.",
+      "icon": "layout"
+    },
+    {
+      "id": "srv-4",
+      "name": "Interactive Booth & Mini-Game Development",
+      "description": "Pembuatan web game interaktif ringan dan responsif untuk keperluan booth pameran, event promosi, dan kampanye digital dengan 60 FPS stabil.",
+      "icon": "gamepad"
+    }
+  ]
+}
