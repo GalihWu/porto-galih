@@ -1,26 +1,27 @@
 {
   "general": {
     "name": "Galih Wahyu Utomo",
-    "title": "Frontend Engineer & UI Designer",
-    "bio": "Frontend Engineer dengan pengalaman 1+ tahun dalam membangun dan mengoptimalkan aplikasi web modern. Berfokus pada peningkatan performa, SEO, dan user experience dengan hasil terukur seperti skor Lighthouse 99.",
+    "title": "Frontend Developer",
+    "tagline": "Membangun pengalaman digital modern melalui aplikasi web yang responsif, cepat, dan mudah digunakan.",
+    "bio": "Saya adalah Frontend Developer yang berfokus pada pengembangan aplikasi web modern. Berpengalaman membangun antarmuka responsif, mengintegrasikan REST API, serta mengoptimalkan performa aplikasi menggunakan teknologi JavaScript dan TypeScript. Saya juga mengembangkan kemampuan mobile development menggunakan React Native untuk memperluas pengalaman membangun produk digital lintas platform.",
     "email": "galihwu2@gmail.com",
     "phone": "+62 857-9921-5319",
     "location": "Surakarta, Jawa Tengah, Indonesia",
-    "availability": "Tersedia untuk Pekerjaan / Freelance",
+    "availability": "Tersedia untuk Pekerjaan / Kolaborasi",
     "avatar_url": "/uploads/photo-1793540919261-3052.jpeg"
   },
   "socials": [
     {
       "id": "soc-1",
-      "platform": "LinkedIn",
-      "url": "https://linkedin.com/in/galihwu2",
-      "icon": "linkedin"
+      "platform": "GitHub",
+      "url": "https://github.com/GalihWu",
+      "icon": "github"
     },
     {
       "id": "soc-2",
-      "platform": "GitHub",
-      "url": "https://github.com/galihwu2",
-      "icon": "github"
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/galihwu2",
+      "icon": "linkedin"
     },
     {
       "id": "soc-3",
@@ -36,60 +37,47 @@
     }
   ],
   "about": {
-    "long_bio": "Saya adalah Frontend Engineer yang berfokus pada pembangunan dan optimasi aplikasi web modern berkecepatan tinggi. Berpengalaman menggunakan React.js, Vue.js, dan Astro dalam membangun arsitektur scalable, serta mengimplementasikan teknik optimasi performa mutakhir seperti ISR (Incremental Static Regeneration), asset lazy loading, dan code splitting. Memiliki rekam jejak terbukti dalam meningkatkan skor Google Lighthouse dari kisaran ~70 menjadi 99, serta memangkas waktu muat halaman hingga 40–60%.",
+    "long_bio": "Saya adalah seorang Frontend Developer yang memiliki ketertarikan pada pengembangan aplikasi web modern dan produk digital yang bermanfaat.\n\nDalam pekerjaan, saya berfokus pada implementasi antarmuka yang responsif, integrasi API, serta pengembangan aplikasi menggunakan berbagai teknologi JavaScript dan TypeScript seperti Astro, Next.js, Vue.js, dan React.js.\n\nSaya telah berkontribusi dalam berbagai jenis proyek, mulai dari platform donasi online, platform event, website publikasi konten, hingga dashboard administrasi.\n\nSelain pengembangan web, saat ini saya juga memperluas kemampuan di bidang mobile development menggunakan React Native, TypeScript, dan NativeWind melalui pengembangan aplikasi donasi online.\n\nSaya senang mempelajari teknologi baru, menyelesaikan tantangan teknis, dan terus meningkatkan kualitas aplikasi dari sisi performa, pengalaman pengguna, serta kemudahan pemeliharaan.",
     "skills": [
       {
-        "category": "Frontend Frameworks",
+        "category": "Frontend Development",
         "items": [
-          "React.js",
-          "Vue.js",
           "Astro",
-          "HTML5 Semantic"
-        ]
-      },
-      {
-        "category": "Bahasa Pemrograman",
-        "items": [
-          "JavaScript (ESNext)",
+          "Next.js",
+          "Vue.js",
+          "React.js",
+          "JavaScript",
           "TypeScript"
         ]
       },
       {
-        "category": "Styling & UI",
+        "category": "Mobile Development",
+        "items": [
+          "React Native",
+          "TypeScript",
+          "NativeWind"
+        ]
+      },
+      {
+        "category": "Styling",
         "items": [
           "TailwindCSS",
-          "Neo-Brutalism UI",
-          "CSS Modules",
-          "Responsive Design"
+          "Bootstrap"
         ]
       },
       {
-        "category": "Performance & SEO",
+        "category": "Engineering & Supporting Skills",
         "items": [
-          "Lighthouse 99 Auditing",
-          "Core Web Vitals",
+          "REST API Integration",
+          "Responsive Design",
+          "Performance Optimization",
+          "SEO",
           "Lazy Loading",
           "ISR",
-          "Code Splitting"
-        ]
-      },
-      {
-        "category": "Tools & Integrasi",
-        "items": [
-          "Git / GitHub",
-          "Figma",
-          "REST API Integration",
-          "Vite",
-          "JSON Engine"
-        ]
-      },
-      {
-        "category": "Soft Skills",
-        "items": [
-          "Problem Solving",
-          "Communication",
-          "Team Collaboration",
-          "Adaptability"
+          "Code Splitting",
+          "Core Web Vitals",
+          "Git",
+          "Figma"
         ]
       }
     ],
@@ -100,7 +88,7 @@
       "id": "edu-1",
       "institution": "STMIK Sinar Nusantara",
       "degree": "Sarjana Informatika",
-      "period": "Okt 2020 - Sep 2024",
+      "period": "Okt 2020 – Sep 2024",
       "grade": "IPK 3.80",
       "description": "Lulus dengan predikat sangat memuaskan, fokus pada rekayasa perangkat lunak web dan sistem informasi cerdas."
     },
@@ -110,171 +98,257 @@
       "degree": "Front-End Engineer Career With ReactJS",
       "period": "Pelatihan Intensif Bersertifikat",
       "grade": "Sertifikat Kelulusan",
-      "description": "Pelatihan intensif spesialisasi pengembangan frontend berbasis React.js, Redux, SPA architecture, dan integrasi REST API."
+      "description": "Pelatihan intensif spesialisasi pengembangan frontend berbasis React.js, arsitektur Single Page Application (SPA), state management, dan integrasi REST API."
     }
   ],
   "experience": [
     {
       "id": "exp-1",
-      "role": "Front End Web Developer & Design UI",
+      "role": "Frontend Developer",
       "company": "Digimedia Siber Optima",
-      "period": "Okt 2024 - Sekarang",
-      "description": "Meningkatkan skor performa website dari ~70 ke 99 (Google Lighthouse) melalui optimasi asset, lazy loading, dan ISR. Mengurangi waktu load halaman hingga 40–60%, mengimplementasikan SEO best practices untuk visibilitas halaman, mengembangkan fitur UI baru yang menaikkan user engagement, dan berkolaborasi erat dengan tim backend dalam integrasi REST API."
+      "period": "Okt 2024 – Sekarang",
+      "description": "Berkontribusi dalam pengembangan dan pemeliharaan aplikasi web, dengan fokus pada implementasi frontend, integrasi API, antarmuka responsif, dan optimasi performa. Mengembangkan aplikasi web menggunakan Astro, Next.js, Vue.js, dan React.js, serta mengimplementasikan antarmuka responsif dengan TailwindCSS dan Bootstrap. Selain itu, turut memperluas pengembangan ke aplikasi mobile menggunakan React Native, TypeScript, dan NativeWind melalui aplikasi donasi online."
     },
     {
       "id": "exp-2",
       "role": "Pekerja Lepas (Frontend Developer)",
       "company": "ErGe Event",
-      "period": "Juli 2024 - Nov 2024",
-      "description": "Mengembangkan mini-game interaktif berbasis web untuk event booth yang sukses meningkatkan interaksi dan engagement pengunjung. Mengoptimalkan performa aplikasi dengan mobile-first approach agar berjalan mulus di berbagai perangkat dan menangani proses deployment serta troubleshooting secara mandiri."
+      "period": "Juli 2024 – Nov 2024",
+      "description": "Mengembangkan mini-game interaktif untuk event booth promosi. Mengoptimalkan performa aplikasi agar berjalan lancar di berbagai perangkat dengan pendekatan mobile-first, serta menangani deployment dan troubleshooting secara mandiri di lingkungan event."
     }
   ],
   "projects": [
     {
       "id": "proj-1",
-      "slug": "oceanpulse-web-performance-engine",
-      "title": "OceanPulse Web Performance Engine",
-      "category": "Web Performance & Analytics",
-      "description": "Platform audit dan analitik Core Web Vitals otomatis yang memangkas waktu muat hingga 58% dan mencapai skor Google Lighthouse 99.",
-      "image_url": "/uploads/proj_oceanpulse.svg",
-      "live_link": "https://github.com/galihwu2",
-      "github_link": "https://github.com/galihwu2",
+      "slug": "beramalbersama",
+      "title": "Beramalbersama",
+      "category": "Web Application",
+      "status": "Production",
+      "visibility": "public",
+      "featured": true,
+      "description": "Platform donasi online yang cepat dan mudah diakses, dilengkapi antarmuka responsif, integrasi payment gateway via REST API, dan installer PWA.",
+      "image_url": "/uploads/proj_beramalbersama.svg",
+      "live_link": "https://beramalbersama.com/",
+      "github_link": "https://github.com/GalihWu",
       "tech_stack": [
-        "React.js",
-        "TypeScript",
+        "Astro",
         "TailwindCSS",
+        "PWA",
         "REST API",
-        "Core Web Vitals"
+        "SEO"
       ],
       "case_study": {
-        "client": "Digimedia Siber Optima & Internal Benchmarking",
-        "duration": "3 Bulan (2024)",
-        "role": "Lead Frontend Engineer",
-        "overview": "OceanPulse adalah platform pemantauan performa web mutakhir yang dirancang untuk mendeteksi bottleneck aset, layout shift yang tidak diinginkan, serta skrip pihak ketiga yang memblokir rendering utama browser.",
-        "challenges": "Website sebelumnya memiliki waktu rendering lambat (LCP > 3.8s) dan banyak gambar tidak teroptimasi yang menyebabkan skor Lighthouse berada di angka ~70.",
-        "solution": "Menerapkan arsitektur ISR (Incremental Static Regeneration), tree-shaking mendalam, konversi gambar otomatis ke WebP/AVIF dengan lazy loading, serta pemisahan chunk JavaScript (code splitting).",
+        "client": "Digimedia Siber Optima / Beramalbersama",
+        "duration": "2024 – Sekarang",
+        "role": "Frontend Developer",
+        "overview": "Beramalbersama adalah platform donasi dan galang dana online yang dirancang untuk mempermudah masyarakat dalam berdonasi secara aman, transparan, dan cepat dari berbagai perangkat.",
+        "challenges": "Kebutuhan akan pengalaman pengguna yang cepat dan mulus bagi para donatur, loading time instan pada koneksi internet seluler menengah ke bawah, serta kemudahan donasi berulang tanpa harus mengunduh aplikasi native dari store.",
+        "solution": "Menggunakan arsitektur Astro untuk meminimalkan JavaScript overhead, TailwindCSS untuk styling responsif mobile-first, integrasi REST API untuk transaksi donasi dan data campaign real-time, serta implementasi Progressive Web App (PWA) agar website dapat diinstal langsung ke homescreen pengguna.",
         "metrics": [
-          "Skor Google Lighthouse: 99 / 100",
-          "Waktu muat halaman berkurang 58%",
-          "LCP (Largest Contentful Paint) < 0.9 detik",
-          "CLS (Cumulative Layout Shift) stabil di 0.00"
+          "Status: Production (Aktif Melayani Donatur Publik)",
+          "Implementasi PWA: Dapat diinstal langsung di Android & iOS",
+          "Pengurangan Waktu Muat: 40–60% lebih cepat dengan arsitektur Astro",
+          "Mobile-First UX: Konversi alur donasi mudah dalam 3 langkah"
         ],
         "features": [
-          "Dashboard pemantauan Core Web Vitals real-time",
-          "Rekomendasi optimasi gambar dan skrip otomatis",
-          "Audit metrik FCP, LCP, CLS, dan INP",
-          "Laporan ekspor format PDF & JSON untuk stakeholder"
+          "Halaman campaign donasi interaktif dengan progress bar dana terkumpul",
+          "Alur pembayaran donasi terintegrasi berbagai channel payment gateway",
+          "Fitur Progressive Web App (PWA) dengan service worker caching",
+          "Struktur metadata SEO teroptimasi untuk kemudahan berbagi tautan di media sosial"
         ]
       }
     },
     {
       "id": "proj-2",
-      "slug": "abyssal-echoes-3d-minigame",
-      "title": "Abyssal Echoes 3D Interactive Game",
-      "category": "Interactive Web & Mini-Game",
-      "description": "Mini-game interaktif 3D ringan berbasis browser untuk kebutuhan booth exhibition dengan framerate stabil 60 FPS pada perangkat mobile.",
-      "image_url": "/uploads/proj_abyssal.svg",
-      "live_link": "https://github.com/galihwu2",
-      "github_link": "https://github.com/galihwu2",
+      "slug": "linkup",
+      "title": "Linkup Event Platform",
+      "category": "Web Application",
+      "status": "Production",
+      "visibility": "public",
+      "featured": true,
+      "description": "Platform event modern yang menyajikan informasi kegiatan sosial, webinar, jadwal acara, dan halaman detail event yang interaktif.",
+      "image_url": "/uploads/proj_linkup.svg",
+      "live_link": "https://linkup.beramalbersama.com/",
+      "github_link": "https://github.com/GalihWu",
       "tech_stack": [
-        "Vue.js 3",
-        "Three.js",
-        "WebGL",
-        "GSAP",
-        "TailwindCSS"
+        "Astro",
+        "TailwindCSS",
+        "REST API",
+        "Responsive Design"
       ],
       "case_study": {
-        "client": "ErGe Event Production",
-        "duration": "4 Bulan (2024)",
-        "role": "Frontend & Creative Developer",
-        "overview": "Aplikasi game interaktif bertema kedalaman samudera yang dioperasikan pada tablet dan layar sentuh booth promosi acara fisik. Tujuannya adalah menarik pengunjung booth dan mendistribusikan voucher hadiah digital.",
-        "challenges": "Perangkat tablet di lokasi pameran memiliki spesifikasi bervariasi dan koneksi internet terbatas, sehingga game harus memiliki ukuran bundle sangat kecil (<2MB) dan rendering visual 3D yang ringan.",
-        "solution": "Mengoptimalkan pipeline rendering WebGL, menggunakan low-poly 3D models dengan texture atlas, serta memanfaatkan instancing geometry untuk menjaga rendering tetap stabil di 60 FPS tanpa lag.",
+        "client": "Beramalbersama Event Network",
+        "duration": "2024",
+        "role": "Frontend Developer",
+        "overview": "Linkup adalah platform penyedia informasi kegiatan sosial, webinar, dan event offline/online yang memungkinkan pengguna menemukan serta mendaftar ke berbagai program acara secara terpadu.",
+        "challenges": "Menampilkan banyak data event dan jadwal dengan hierarki informasi yang jelas tanpa membuat halaman terasa padat atau lambat dimuat di perangkat ponsel.",
+        "solution": "Membangun antarmuka berbasis komponen Astro yang modular, perancangan layout kartu event dengan TailwindCSS, integrasi REST API untuk pencarian dan filter event dinamis, serta navigasi pendaftaran yang ringkas.",
         "metrics": [
-          "Ukuran initial asset bundle di bawah 1.8 MB",
-          "Konsisten 60 FPS pada perangkat mobile / tablet",
-          "Menaikkan retensi pengunjung booth hingga 2.5x lipat",
-          "Zero crash selama 5 hari event berlangsung"
+          "Status: Production (Publik)",
+          "Desain Responsif: Navigasi optimal di desktop, tablet, dan smartphone",
+          "Performa Cepat: Server-rendered pages dengan minimal client hydration"
         ],
         "features": [
-          "Kontrol interaktif sentuhan layar responsif",
-          "Animasi fluida dengan GSAP & WebGL Shaders",
-          "Sistem scoring dan reward voucher QR Code",
-          "Offline-first caching capability untuk booth darurat"
+          "Katalog daftar kegiatan dan event dengan kategori terstruktur",
+          "Halaman detail event lengkap dengan jadwal, lokasi, dan profil pembicara",
+          "Alur pendaftaran peserta terintegrasi formulir pendaftaran digital",
+          "Integrasi berbagi event ke media sosial dan aplikasi perpesanan"
         ]
       }
     },
     {
       "id": "proj-3",
-      "slug": "astronexus-headless-storefront",
-      "title": "AstroNexus Headless Storefront",
-      "category": "E-Commerce & High-Speed Web",
-      "description": "Storefront e-commerce generasi baru dengan arsitektur Astro Islands, menghadirkan instant navigation dan zero JavaScript payload default.",
-      "image_url": "/uploads/proj_astronexus.svg",
-      "live_link": "https://github.com/galihwu2",
-      "github_link": "https://github.com/galihwu2",
+      "slug": "beramalbersama-blog",
+      "title": "Beramalbersama Blog",
+      "category": "Content Platform",
+      "status": "Production",
+      "visibility": "public",
+      "featured": true,
+      "description": "Website publikasi artikel berita inspiratif, laporan penyaluran donasi, dan edukasi sosial berbasis Next.js dengan optimasi SEO tinggi.",
+      "image_url": "/uploads/proj_blog_beramalbersama.svg",
+      "live_link": "https://blog.beramalbersama.com/",
+      "github_link": "https://github.com/GalihWu",
       "tech_stack": [
-        "Astro",
-        "TypeScript",
+        "Next.js",
         "TailwindCSS",
-        "Edge API",
-        "SEO Semantics"
+        "SEO",
+        "ISR",
+        "REST API"
       ],
       "case_study": {
-        "client": "Modern E-Commerce Merchant",
-        "duration": "2 Bulan (2024)",
-        "role": "Frontend Architect",
-        "overview": "Pengembangan etalase belanja headless berkecepatan sub-detik untuk brand ritel modern. Fokus utama adalah meningkatkan rasio konversi checkout dengan mengeliminasi jeda navigasi halaman.",
-        "challenges": "Aplikasi e-commerce berbasis SPA tradisional seringkali mengalami waktu *Time to Interactive* (TTI) yang lambat pada ponsel kelas menengah ke bawah.",
-        "solution": "Membangun dengan Astro Islands, di mana komponen interaktif (seperti keranjang belanja dan filter) hanya di-hydrate ketika terlihat di viewport (*client:visible*). Halaman statis disajikan murni dalam format HTML semantik super ringan.",
+        "client": "Beramalbersama Editorial",
+        "duration": "2024 – Sekarang",
+        "role": "Frontend Developer",
+        "overview": "Kanal media publikasi resmi Beramalbersama untuk menyajikan artikel transparansi penyaluran bantuan, kisah inspiratif penerima manfaat, dan tips filantropi.",
+        "challenges": "Meningkatkan visibilitas organik di mesin pencari (Google SEO), kecepatan indexing artikel baru, serta kenyamanan membaca (editorial reading experience) di layar kecil.",
+        "solution": "Menggunakan Next.js dengan teknik Incremental Static Regeneration (ISR) agar artikel selalu diperbarui tanpa build ulang penuh, penataan tipografi artikel editorial dengan Tailwind Typography, serta implementasi Open Graph dan JSON-LD schema markup.",
         "metrics": [
-          "Skor Google Lighthouse Desktop: 100 / 100",
-          "Largest Contentful Paint: 0.6 detik",
-          "Skor SEO 100 dengan schema markup JSON-LD lengkap",
-          "JavaScript payload berkurang 75% dibanding toko sebelumnya"
+          "Status: Production (Publik)",
+          "SEO Score: Teroptimasi untuk Google Rich Snippets & metadata Open Graph",
+          "Rendering: Incremental Static Regeneration (ISR) untuk pembaruan cepat",
+          "Reading Experience: Desain bersih tanpa gangguan iklan/pop-up yang mengganggu"
         ],
         "features": [
-          "Katalog produk dengan filter dinamis instan",
-          "Shopping cart interaktif dengan penyimpanan lokal sinkron",
-          "Optimasi SEO terstruktur untuk Rich Google Snippets",
-          "Dukungan mode gelap dan responsivitas penuh"
+          "Feed artikel terbaru, kategori artikel, dan tagging konten relevan",
+          "Halaman baca artikel editorial dengan tipografi elegan dan estimasi waktu baca",
+          "Tautan donasi kontekstual langsung di akhir cerita artikel",
+          "Sitemap dinamis dan optimasi schema SEO terstruktur"
         ]
       }
     },
     {
       "id": "proj-4",
-      "slug": "aquaui-design-system",
-      "title": "AquaUI Modern Design System",
-      "category": "UI Library & Component System",
-      "description": "Pustaka komponen antarmuka modular yang mudah digunakan ulang, mematuhi standar aksesibilitas WCAG AAA dan didokumentasikan lengkap.",
-      "image_url": "/uploads/proj_aquaui.svg",
-      "live_link": "https://github.com/galihwu2",
-      "github_link": "https://github.com/galihwu2",
+      "slug": "aksiberbagi",
+      "title": "Aksi Berbagi",
+      "category": "Web Application",
+      "status": "Production",
+      "visibility": "public",
+      "featured": true,
+      "description": "Platform crowdfunding donasi kemanusiaan berbasis Next.js dengan antarmuka yang bersih, alur checkout donasi cepat, dan integrasi API yang tangguh.",
+      "image_url": "/uploads/proj_aksiberbagi.svg",
+      "live_link": "https://aksiberbagi.com/",
+      "github_link": "https://github.com/GalihWu",
       "tech_stack": [
-        "Vue.js 3",
+        "Next.js",
         "TailwindCSS",
-        "Vite",
-        "Storybook",
-        "Figma"
+        "REST API",
+        "Responsive Design"
       ],
       "case_study": {
-        "client": "Open Source & Developer Community",
-        "duration": "Continuous Development",
-        "role": "UI Designer & Maintainer",
-        "overview": "Sistem desain antarmuka berbasis komponen modular yang mengintegrasikan estetika Neo-Brutalism dengan prinsip ergonomi modern. Ditujukan untuk mempercepat pengembangan UI tanpa kompromi kualitas aksesibilitas.",
-        "challenges": "Banyak library UI memiliki ukuran paket berlebihan (*bundle bloat*) dan sulit dikustomisasi dengan gaya desain non-konvensional.",
-        "solution": "Membangun komponen tanpa dependensi eksternal berlebih, memanfaatkan utility class Tailwind, dan menyediakan dukungan keyboard navigation serta atribut ARIA lengkap.",
+        "client": "Aksi Berbagi Foundation",
+        "duration": "2024 – Sekarang",
+        "role": "Frontend Developer",
+        "overview": "Platform crowdfunding sosial terpercaya yang memfasilitasi penggalangan dana untuk program kemanusiaan, pendidikan, kesehatan, dan bencana alam.",
+        "challenges": "Alur donasi harus sangat intuitif untuk semua kelompok usia, waktu respon formulir instan, serta integrasi berbagai status transaksi pembayaran yang dinamis.",
+        "solution": "Implementasi antarmuka Next.js yang modular, integrasi REST API pembayaran, validasi formulir interaktif di sisi klien, dan desain responsif mobile-first dengan TailwindCSS.",
         "metrics": [
-          "Kepatuhan Aksesibilitas WCAG 2.1 Level AAA",
-          "Ukuran bundle total < 15 KB gzipped",
-          "Digunakan pada 5+ proyek web produksi internal",
-          "Dukungan penuh TypeScript types untuk semua props"
+          "Status: Production (Publik)",
+          "Alur Transaksi: Checkout donasi cepat dalam hitungan detik",
+          "Uptime & Stabilitas: Arsitektur Next.js yang handal untuk ribuan transaksi"
         ],
         "features": [
-          "30+ Komponen siap pakai (Buttons, Cards, Inputs, Modals, Toasts)",
-          "Dokumentasi interaktif dengan Storybook",
-          "Tema kustomisasi berbasis CSS Custom Properties",
-          "Fokus visual tinggi untuk keyboard navigation"
+          "Pencarian dan filter program galang dana berdasarkan kategori kebutuhan",
+          "Kalkulator nominal donasi interaktif dengan opsi custom amount",
+          "Halaman transparansi doa donatur dan kabar penyaluran terbaru",
+          "Sistem notifikasi status donasi via WhatsApp/Email"
+        ]
+      }
+    },
+    {
+      "id": "proj-5",
+      "slug": "beramalbersama-admin-panel",
+      "title": "Beramalbersama Admin Panel",
+      "category": "Admin Dashboard",
+      "status": "Private",
+      "visibility": "restricted",
+      "featured": false,
+      "description": "Dashboard internal untuk pengelolaan program campaign donasi, verifikasi data transaksi, pelaporan keuangan, dan manajemen konten platform.",
+      "image_url": "/uploads/proj_beramalbersama_admin.svg",
+      "live_link": "",
+      "github_link": "https://github.com/GalihWu",
+      "tech_stack": [
+        "Vue.js",
+        "Bootstrap",
+        "REST API",
+        "State Management"
+      ],
+      "case_study": {
+        "client": "Internal Operation Digimedia Siber Optima",
+        "duration": "2024",
+        "role": "Frontend Developer",
+        "overview": "Sistem dashboard berbasis web yang digunakan oleh tim operasional dan keuangan untuk memantau aliran dana masuk, memvalidasi bukti pembayaran, serta mengelola postingan campaign.",
+        "challenges": "Menyajikan volume tabel data transaksi yang besar secara terstruktur, responsif, dan mudah difilter oleh tim operasional harian.",
+        "solution": "Menggunakan Vue.js dengan state management terpusat untuk interaksi data real-time, komponen tabel responsif Bootstrap, serta validasi form multi-langkah untuk pembuatan campaign donasi baru.",
+        "metrics": [
+          "Status: Private Project (Sistem Operasional Internal)",
+          "Efisiensi: Mempercepat proses verifikasi donasi manual tim operasional",
+          "Keamanan: Role-based access control & token-based session"
+        ],
+        "features": [
+          "Tabel manajemen transaksi donasi dengan filter status (pending, sukses, gagal)",
+          "Form pembuatan dan moderasi program campaign galang dana",
+          "Laporan keuangan dan analitik ringkasan donasi mingguan/bulanan",
+          "Manajemen akun pengguna dan hak akses operasional"
+        ]
+      }
+    },
+    {
+      "id": "proj-6",
+      "slug": "donation-mobile-app",
+      "title": "Donation Mobile Application",
+      "category": "Mobile Application",
+      "status": "In Development",
+      "visibility": "public",
+      "featured": true,
+      "description": "Pengembangan aplikasi donasi online berbasis mobile untuk Android dan iOS menggunakan React Native, TypeScript, dan NativeWind.",
+      "image_url": "/uploads/proj_donation_mobile.svg",
+      "live_link": "",
+      "github_link": "https://github.com/GalihWu",
+      "tech_stack": [
+        "React Native",
+        "TypeScript",
+        "NativeWind",
+        "REST API",
+        "Mobile App"
+      ],
+      "case_study": {
+        "client": "Digimedia Siber Optima (R&D Mobile)",
+        "duration": "2024 – Sekarang (In Development)",
+        "role": "Mobile Frontend Developer",
+        "overview": "Pengembangan aplikasi donasi versi mobile yang memperluas jangkauan platform Beramalbersama ke ekosistem smartphone dengan pengalaman pengguna native yang cepat dan notifikasi langsung.",
+        "challenges": "Menghadirkan performa aplikasi yang stabil di berbagai varian perangkat Android, arsitektur kode yang terstruktur dengan TypeScript, serta keseragaman styling antara versi web dan mobile.",
+        "solution": "Memanfaatkan React Native dengan NativeWind (Tailwind utility classes untuk mobile) agar komponen UI konsisten dengan web, manajemen state yang rapi, penanganan error & loading state yang bersahabat, serta pengujian berkala pada perangkat Android fisik.",
+        "metrics": [
+          "Status: In Development (Pengembangan Aktif)",
+          "Lintas Platform: Satu basis kode TypeScript untuk Android & iOS",
+          "UI Consistency: Komponen desain sinkron dengan versi web Beramalbersama",
+          "Native Performance: Transisi navigasi layar yang halus (60 FPS)"
+        ],
+        "features": [
+          "Navigasi tab bar intuitif (Beranda, Donasi Saya, Kabar, Akun)",
+          "Komponen kartu campaign yang dapat digunakan kembali (reusable components)",
+          "Integrasi REST API donasi dan sinkronisasi data akun donatur",
+          "Penanganan loading skeleton, error handling, dan empty state interaktif"
         ]
       }
     }
@@ -282,27 +356,27 @@
   "services": [
     {
       "id": "srv-1",
-      "name": "Web Performance & Core Web Vitals",
-      "description": "Optimasi performa halaman web menyeluruh: peningkatan skor Lighthouse hingga 99, pemangkasan load time 40–60%, lazy loading aset, dan implementasi ISR.",
-      "icon": "zap"
-    },
-    {
-      "id": "srv-2",
-      "name": "Modern Frontend Web Development",
-      "description": "Pengembangan aplikasi web berbasis React.js, Vue.js, atau Astro dengan arsitektur scalable, TypeScript, dan integrasi REST API yang kokoh.",
+      "name": "Web Development",
+      "description": "Pengembangan aplikasi web modern dan responsif menggunakan teknologi JavaScript dan TypeScript seperti Astro, Next.js, React.js, dan Vue.js.",
       "icon": "code"
     },
     {
+      "id": "srv-2",
+      "name": "Mobile Development (React Native)",
+      "description": "Pengembangan aplikasi mobile lintas platform untuk Android dan iOS menggunakan React Native, TypeScript, dan NativeWind dengan performa native yang mulus.",
+      "icon": "smartphone"
+    },
+    {
       "id": "srv-3",
-      "name": "UI/UX Design & Semantic Implementation",
-      "description": "Penerjemahan desain Figma ke kode web responsif berkarakter (Neo-Brutalism, Clean Modern) dengan struktur semantik HTML5 dan TailwindCSS.",
+      "name": "UI Implementation & Responsive Design",
+      "description": "Penerjemahan desain Figma ke antarmuka web dan mobile yang responsif, rapi, dan mudah dirawat menggunakan TailwindCSS dan Bootstrap.",
       "icon": "layout"
     },
     {
       "id": "srv-4",
-      "name": "Interactive Booth & Mini-Game Development",
-      "description": "Pembuatan web game interaktif ringan dan responsif untuk keperluan booth pameran, event promosi, dan kampanye digital dengan 60 FPS stabil.",
-      "icon": "gamepad"
+      "name": "Performance & Core Web Vitals",
+      "description": "Optimasi performa halaman web, teknik lazy loading, code splitting, Incremental Static Regeneration (ISR), dan SEO best practices untuk pengalaman pengguna optimal.",
+      "icon": "zap"
     }
   ]
 }

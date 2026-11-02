@@ -73,7 +73,7 @@ npm start
 
 Buka peramban (browser) di:
 - **Halaman Web Publik**: [http://localhost:3000/](http://localhost:3000/)
-- **Halaman Detail Proyek**: [http://localhost:3000/project/oceanpulse-web-performance-engine](http://localhost:3000/project/oceanpulse-web-performance-engine)
+- **Halaman Detail Proyek**: [http://localhost:3000/project/beramalbersama](http://localhost:3000/project/beramalbersama)
 - **Halaman Admin Panel CMS**: [http://localhost:3000/admin](http://localhost:3000/admin) (Password: `admin123`)
 
 ---
@@ -108,11 +108,13 @@ portfolio-cms/
     │   ├── project-detail.js  # Renderer DOM detail studi kasus
     │   └── admin.js           # Controller state & CRUD panel CMS
     └── uploads/               # Direktori penyimpanan media lokal
-        ├── galih_photo.jpg    # Foto profil asli Galih Wahyu Utomo
-        ├── proj_oceanpulse.svg
-        ├── proj_abyssal.svg
-        ├── proj_astronexus.svg
-        └── proj_aquaui.svg
+        ├── photo-*.jpeg       # Foto profil asli Galih Wahyu Utomo
+        ├── proj_beramalbersama.svg
+        ├── proj_linkup.svg
+        ├── proj_blog_beramalbersama.svg
+        ├── proj_aksiberbagi.svg
+        ├── proj_beramalbersama_admin.svg
+        └── proj_donation_mobile.svg
 ```
 
 ---

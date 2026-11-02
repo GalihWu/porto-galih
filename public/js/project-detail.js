@@ -26,7 +26,7 @@ async function loadProjectDetail() {
 
   // Fallback to first project if accessed directly as /project or /project.html without params
   if (!identifier) {
-    identifier = 'oceanpulse-web-performance-engine';
+    identifier = 'beramalbersama';
   }
 
   try {
@@ -123,6 +123,21 @@ function hydrateProjectView(proj, allProjects = []) {
 
   const durationEl = document.getElementById('meta-duration');
   if (durationEl) durationEl.textContent = cs.duration || '2024';
+
+  const statusEl = document.getElementById('meta-status');
+  if (statusEl) {
+    const st = (proj.status || 'Production').toLowerCase();
+    if (st === 'production') {
+      statusEl.className = 'font-heading font-black text-sm md:text-base text-emerald-600';
+      statusEl.innerHTML = '✓ Production (Publik)';
+    } else if (st === 'private') {
+      statusEl.className = 'font-heading font-black text-sm md:text-base text-neutral-800';
+      statusEl.innerHTML = '🔒 Private (Internal)';
+    } else {
+      statusEl.className = 'font-heading font-black text-sm md:text-base text-amber-600';
+      statusEl.innerHTML = '⚡ In Development';
+    }
+  }
 
   const challengeEl = document.getElementById('proj-challenge');
   if (challengeEl) {

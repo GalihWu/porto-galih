@@ -445,7 +445,7 @@ function renderProjectsList() {
         </div>
 
         <!-- Basic Project Info -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
           <div>
             <label class="block text-[11px] font-black uppercase mb-1">Judul Proyek</label>
             <input type="text" value="${proj.title || ''}" onchange="updateArrayField('projects', ${idx}, 'title', this.value)"
@@ -459,7 +459,16 @@ function renderProjectsList() {
           <div>
             <label class="block text-[11px] font-black uppercase mb-1">Kategori</label>
             <input type="text" value="${proj.category || ''}" onchange="updateArrayField('projects', ${idx}, 'category', this.value)"
-                   class="w-full px-2.5 py-1.5 text-xs border border-black rounded-lg bg-white font-medium" placeholder="Web App / Performance">
+                   class="w-full px-2.5 py-1.5 text-xs border border-black rounded-lg bg-white font-medium" placeholder="Web Application">
+          </div>
+          <div>
+            <label class="block text-[11px] font-black uppercase mb-1">Status Proyek</label>
+            <select onchange="updateArrayField('projects', ${idx}, 'status', this.value)"
+                    class="w-full px-2.5 py-1.5 text-xs border border-black rounded-lg bg-white font-bold">
+              <option value="Production" ${proj.status === 'Production' ? 'selected' : ''}>Production</option>
+              <option value="Private" ${proj.status === 'Private' ? 'selected' : ''}>Private</option>
+              <option value="In Development" ${proj.status === 'In Development' ? 'selected' : ''}>In Development</option>
+            </select>
           </div>
         </div>
 
@@ -564,11 +573,12 @@ function addProjectItem() {
     slug: `proyek-baru-${Date.now()}`,
     title: 'Judul Proyek Baru',
     category: 'Web Application',
+    status: 'Production',
     description: 'Deskripsi singkat mengenai proyek yang telah dikerjakan...',
-    image_url: '/uploads/proj_oceanpulse.svg',
+    image_url: '/uploads/proj_beramalbersama.svg',
     live_link: 'https://',
-    github_link: 'https://github.com/galihwu2',
-    tech_stack: ['React.js', 'TailwindCSS'],
+    github_link: 'https://github.com/GalihWu',
+    tech_stack: ['Astro', 'TailwindCSS'],
     case_study: {
       client: 'Klien Baru',
       role: 'Frontend Engineer',

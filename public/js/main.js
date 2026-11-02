@@ -2,6 +2,9 @@
  * main.js - Dynamic Public Profile Renderer
  */
 
+let allProjectsCache = [];
+let activeCategory = 'all';
+
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   loadProfileData();
@@ -36,7 +39,10 @@ async function loadProfileData() {
     hydrateSkills(data.about?.skills || []);
     hydrateExperience(data.experience || []);
     hydrateEducation(data.education || []);
-    hydrateProjects(data.projects || []);
+    
+    allProjectsCache = data.projects || [];
+    renderFilteredProjects();
+
     hydrateServices(data.services || []);
   } catch (error) {
     console.error('Error saat memuat profil:', error);
@@ -61,7 +67,7 @@ function hydrateGeneral(gen = {}, cvUrl) {
   }
   if (gen.bio) {
     const el = document.getElementById('hero-bio');
-    if (el) el.innerHTML = `Halo! Saya <strong id="hero-name">${gen.name || 'Galih Wahyu Utomo'}</strong>, ${gen.bio}`;
+    if (el) el.textContent = gen.bio;
   }
   if (gen.avatar_url) {
     const avatar = document.getElementById('hero-avatar');
@@ -106,7 +112,10 @@ function hydrateSocials(socials = []) {
 // 3. About
 function hydrateAbout(about = {}, gen = {}) {
   const bioEl = document.getElementById('about-long-bio');
-  if (bioEl && about.long_bio) bioEl.textContent = about.long_bio;
+  if (bioEl && about.long_bio) {
+    // Preserve paragraphs cleanly
+    bioEl.innerHTML = about.long_bio.split('\n\n').map(p => `<p class="mb-3 leading-relaxed">${p}</p>`).join('');
+  }
 
   if (gen.location) {
     const locEl = document.getElementById('about-location');
@@ -134,11 +143,10 @@ function hydrateSkills(skills = []) {
   const container = document.getElementById('skills-container');
   if (!container) return;
 
-  const colorBadges = ['bg-[#FFD028]', 'bg-[#FF6B6B]', 'bg-[#4ECDC4]', 'bg-[#A78BFA]', 'bg-white'];
+  const colorBadges = ['bg-[#FFD028]', 'bg-[#4ECDC4]', 'bg-[#FF6B6B]', 'bg-[#A78BFA]'];
 
   container.innerHTML = skills.map((group, idx) => {
     const badgeColor = colorBadges[idx % colorBadges.length];
-    const textColor = badgeColor === 'bg-[#FF6B6B]' ? 'text-white' : 'text-black';
 
     const itemsHtml = (group.items || []).map(item => `
       <span class="px-2.5 py-1 bg-[#F4F0EA] border border-black rounded-md text-xs font-bold shadow-sm">
@@ -165,7 +173,7 @@ function hydrateExperience(experiences = []) {
   const container = document.getElementById('experience-container');
   if (!container) return;
 
-  container.innerHTML = experiences.map((exp, idx) => `
+  container.innerHTML = experiences.map((exp) => `
     <article class="card-brutal p-6 md:p-8 bg-white space-y-3">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b-2 border-black pb-3">
         <div>
@@ -208,12 +216,43 @@ function hydrateEducation(educations = []) {
   `).join('');
 }
 
-// 7. Projects Grid with Link to Dedicated Detail Page
-function hydrateProjects(projects = []) {
+// 7. Projects Filter & Dynamic Grid
+window.filterProjects = function(category) {
+  activeCategory = category;
+
+  // Update button active styling
+  const buttons = document.querySelectorAll('.project-filter-btn');
+  buttons.forEach(btn => {
+    const cat = btn.getAttribute('data-category');
+    if (cat === category) {
+      btn.className = 'project-filter-btn px-3.5 py-1.5 text-xs font-black uppercase border-2 border-black rounded-lg bg-[#FFD028] shadow-brutal-sm transition-all';
+    } else {
+      btn.className = 'project-filter-btn px-3.5 py-1.5 text-xs font-black uppercase border-2 border-black rounded-lg bg-white hover:bg-[#F4F0EA] transition-all';
+    }
+  });
+
+  renderFilteredProjects();
+};
+
+function renderFilteredProjects() {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
 
-  grid.innerHTML = projects.map(proj => {
+  const filtered = activeCategory === 'all' 
+    ? allProjectsCache 
+    : allProjectsCache.filter(p => (p.category || '').toLowerCase() === activeCategory.toLowerCase());
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `
+      <div class="col-span-full card-brutal p-8 text-center bg-white space-y-2">
+        <p class="font-heading font-black text-lg">Tidak ada proyek dalam kategori "${activeCategory}".</p>
+        <button onclick="filterProjects('all')" class="btn-brutal btn-brutal-sm bg-[#FFD028] text-xs">Tampilkan Semua Proyek</button>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(proj => {
     const slugOrId = proj.slug || proj.id;
     const detailUrl = `/project/${slugOrId}`;
 
@@ -223,16 +262,47 @@ function hydrateProjects(projects = []) {
       </span>
     `).join('');
 
+    // Status Badge
+    let statusBadgeHtml = '';
+    const st = (proj.status || '').toLowerCase();
+    if (st === 'production') {
+      statusBadgeHtml = `
+        <span class="px-2.5 py-1 bg-emerald-100 text-emerald-950 border-2 border-black rounded-lg text-xs font-black uppercase flex items-center gap-1.5 shadow-brutal-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Production</span>
+        </span>
+      `;
+    } else if (st === 'private') {
+      statusBadgeHtml = `
+        <span class="px-2.5 py-1 bg-neutral-900 text-white border-2 border-black rounded-lg text-xs font-black uppercase flex items-center gap-1.5 shadow-brutal-sm">
+          <iconify-icon icon="lucide:lock" class="text-xs"></iconify-icon>
+          <span>Private Project</span>
+        </span>
+      `;
+    } else if (st.includes('dev')) {
+      statusBadgeHtml = `
+        <span class="px-2.5 py-1 bg-amber-100 text-amber-950 border-2 border-black rounded-lg text-xs font-black uppercase flex items-center gap-1.5 shadow-brutal-sm">
+          <span class="w-2 h-2 rounded-full bg-amber-500 brutal-pulse-dot"></span>
+          <span>In Development</span>
+        </span>
+      `;
+    }
+
     return `
       <article class="card-brutal card-brutal-hover overflow-hidden flex flex-col justify-between">
         
         <!-- Image / SVG Banner with Link -->
         <a href="${detailUrl}" class="block relative group overflow-hidden border-b-[3px] border-black aspect-video bg-neutral-100">
           <img src="${proj.image_url}" alt="${proj.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          
           <div class="absolute top-3 left-3">
             <span class="px-2.5 py-1 bg-[#FFD028] border-2 border-black rounded-lg text-xs font-black shadow-brutal-sm">
               ${proj.category}
             </span>
+          </div>
+
+          <div class="absolute top-3 right-3">
+            ${statusBadgeHtml}
           </div>
         </a>
 
@@ -254,18 +324,25 @@ function hydrateProjects(projects = []) {
           <div class="pt-4 border-t-2 border-black flex flex-wrap items-center justify-between gap-3">
             <a href="${detailUrl}" class="btn-brutal btn-brutal-sm bg-[#FFD028] text-black font-black flex items-center gap-1.5">
               <span>Detail Case Study</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              <iconify-icon icon="lucide:arrow-right" class="text-xs"></iconify-icon>
             </a>
 
             <div class="flex items-center gap-2">
               ${proj.live_link ? `
-                <a href="${proj.live_link}" target="_blank" class="btn-brutal-sm bg-white hover:bg-[#FF6B6B] hover:text-white transition-colors text-black font-bold">
-                  Demo
+                <a href="${proj.live_link}" target="_blank" rel="noopener noreferrer" class="btn-brutal-sm bg-white hover:bg-[#FF6B6B] hover:text-white transition-colors text-black font-bold flex items-center gap-1">
+                  <span>Website</span>
+                  <iconify-icon icon="lucide:external-link" class="text-[11px]"></iconify-icon>
                 </a>
-              ` : ''}
+              ` : (st === 'private' ? `
+                <span class="text-[10px] font-black uppercase text-black/70 px-2 py-1 bg-[#F4F0EA] border border-black rounded flex items-center gap-1">
+                  <iconify-icon icon="lucide:lock" class="text-[10px]"></iconify-icon>
+                  <span>Internal</span>
+                </span>
+              ` : '')}
               ${proj.github_link ? `
-                <a href="${proj.github_link}" target="_blank" class="btn-brutal-sm bg-white hover:bg-black hover:text-white transition-colors text-black font-bold">
-                  GitHub
+                <a href="${proj.github_link}" target="_blank" rel="noopener noreferrer" class="btn-brutal-sm bg-white hover:bg-black hover:text-white transition-colors text-black font-bold flex items-center gap-1">
+                  <span>GitHub</span>
+                  <iconify-icon icon="lucide:github" class="text-[11px]"></iconify-icon>
                 </a>
               ` : ''}
             </div>
@@ -291,6 +368,8 @@ function hydrateServices(services = []) {
     
     if (iconId.includes('zap') || iconId.includes('perf')) {
       iconName = 'lucide:zap';
+    } else if (iconId.includes('smart') || iconId.includes('mobile')) {
+      iconName = 'lucide:smartphone';
     } else if (iconId.includes('code') || iconId.includes('dev')) {
       iconName = 'lucide:code-2';
     } else if (iconId.includes('layout') || iconId.includes('design')) {
