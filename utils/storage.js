@@ -65,6 +65,18 @@ function saveProfileDataSafely(newData) {
   // 3. Lakukan rename atomik dari TMP ke PROFILE_FILE
   fs.renameSync(TMP_FILE, PROFILE_FILE);
 
+  // 4. Sinkronkan juga ke public/data/profile.json untuk static deployment (Netlify/Vercel static)
+  const PUBLIC_DATA_DIR = path.join(__dirname, '..', 'public', 'data');
+  const PUBLIC_PROFILE_FILE = path.join(PUBLIC_DATA_DIR, 'profile.json');
+  try {
+    if (!fs.existsSync(PUBLIC_DATA_DIR)) {
+      fs.mkdirSync(PUBLIC_DATA_DIR, { recursive: true });
+    }
+    fs.copyFileSync(PROFILE_FILE, PUBLIC_PROFILE_FILE);
+  } catch (err) {
+    console.warn('Gagal sinkronisasi static profile file:', err.message);
+  }
+
   return {
     success: true,
     message: 'Data berhasil disimpan secara aman dengan atomic write.',

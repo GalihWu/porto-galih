@@ -1,0 +1,381 @@
+{
+  "general": {
+    "name": "Galih Wahyu Utomo",
+    "title": "Frontend Developer",
+    "bio": "Saya adalah Frontend Developer yang berfokus pada pengembangan aplikasi web modern. Berpengalaman membangun antarmuka responsif, mengintegrasikan REST API, serta mengoptimalkan performa aplikasi menggunakan teknologi JavaScript dan TypeScript. Saya juga mengembangkan kemampuan mobile development menggunakan React Native untuk memperluas pengalaman membangun produk digital lintas platform.",
+    "email": "galihwu2@gmail.com",
+    "phone": "+62 857-9921-5319",
+    "location": "Surakarta, Jawa Tengah, Indonesia",
+    "availability": "Tersedia untuk Pekerjaan / Kolaborasi",
+    "avatar_url": "/uploads/photo-1793540919261-3052.jpeg"
+  },
+  "socials": [
+    {
+      "id": "soc-1",
+      "platform": "GitHub",
+      "url": "https://github.com/GalihWu",
+      "icon": "github"
+    },
+    {
+      "id": "soc-2",
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/galihwahyuutomo/",
+      "icon": "linkedin"
+    },
+    {
+      "id": "soc-3",
+      "platform": "Email",
+      "url": "mailto:galihwu2@gmail.com",
+      "icon": "mail"
+    },
+    {
+      "id": "soc-4",
+      "platform": "WhatsApp",
+      "url": "https://wa.me/6285799215319",
+      "icon": "phone"
+    }
+  ],
+  "about": {
+    "long_bio": "Saya adalah seorang Frontend Developer yang memiliki ketertarikan pada pengembangan aplikasi web modern dan produk digital yang bermanfaat.\n\nDalam pekerjaan, saya berfokus pada implementasi antarmuka yang responsif, integrasi API, serta pengembangan aplikasi menggunakan berbagai teknologi JavaScript dan TypeScript seperti Astro, Next.js, Vue.js, dan React.js.\n\nSaya telah berkontribusi dalam berbagai jenis proyek, mulai dari platform donasi online, platform event, website publikasi konten, hingga dashboard administrasi.\n\nSelain pengembangan web, saat ini saya juga memperluas kemampuan di bidang mobile development menggunakan React Native, TypeScript, dan NativeWind melalui pengembangan aplikasi donasi online.\n\nSaya senang mempelajari teknologi baru, menyelesaikan tantangan teknis, dan terus meningkatkan kualitas aplikasi dari sisi performa, pengalaman pengguna, serta kemudahan pemeliharaan.",
+    "skills": [
+      {
+        "category": "Frontend Development",
+        "items": [
+          "Astro",
+          "Next.js",
+          "Vue.js",
+          "React.js",
+          "JavaScript",
+          "TypeScript"
+        ]
+      },
+      {
+        "category": "Mobile Development",
+        "items": [
+          "React Native",
+          "TypeScript",
+          "NativeWind"
+        ]
+      },
+      {
+        "category": "Styling",
+        "items": [
+          "TailwindCSS",
+          "Bootstrap"
+        ]
+      },
+      {
+        "category": "Engineering & Supporting Skills",
+        "items": [
+          "REST API Integration",
+          "Responsive Design",
+          "Performance Optimization",
+          "SEO",
+          "Lazy Loading",
+          "ISR",
+          "Code Splitting",
+          "Core Web Vitals",
+          "Git",
+          "Figma"
+        ]
+      }
+    ],
+    "cv_url": "/uploads/cv_galih_wahyu_utomo.pdf"
+  },
+  "education": [
+    {
+      "id": "edu-1",
+      "institution": "STMIK Sinar Nusantara",
+      "degree": "Sarjana Informatika",
+      "period": "Okt 2020 – Sep 2024",
+      "grade": "IPK 3.80",
+      "description": "Lulus dengan predikat sangat memuaskan, fokus pada rekayasa perangkat lunak web dan sistem informasi cerdas."
+    },
+    {
+      "id": "edu-2",
+      "institution": "MSIB - Kampus Merdeka",
+      "degree": "Front-End Engineer Career With ReactJS",
+      "period": "Pelatihan Intensif Bersertifikat",
+      "grade": "Sertifikat Kelulusan",
+      "description": "Pelatihan intensif spesialisasi pengembangan frontend berbasis React.js, arsitektur Single Page Application (SPA), state management, dan integrasi REST API."
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "role": "Frontend Developer",
+      "company": "Digimedia Siber Optima",
+      "period": "Okt 2024 – Sekarang",
+      "description": "Berkontribusi dalam pengembangan dan pemeliharaan aplikasi web, dengan fokus pada implementasi frontend, integrasi API, antarmuka responsif, dan optimasi performa. Mengembangkan aplikasi web menggunakan Astro, Next.js, Vue.js, dan React.js, serta mengimplementasikan antarmuka responsif dengan TailwindCSS dan Bootstrap. Selain itu, turut memperluas pengembangan ke aplikasi mobile menggunakan React Native, TypeScript, dan NativeWind melalui aplikasi donasi online."
+    },
+    {
+      "id": "exp-2",
+      "role": "Pekerja Lepas (Frontend Developer)",
+      "company": "ErGe Event",
+      "period": "Juli 2024 – Nov 2024",
+      "description": "Mengembangkan mini-game interaktif untuk event booth promosi. Mengoptimalkan performa aplikasi agar berjalan lancar di berbagai perangkat dengan pendekatan mobile-first, serta menangani deployment dan troubleshooting secara mandiri di lingkungan event."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "slug": "beramalbersama",
+      "title": "Beramalbersama",
+      "category": "Web Application",
+      "status": "Production",
+      "visibility": "public",
+      "featured": true,
+      "description": "Platform donasi online yang cepat dan mudah diakses, dilengkapi antarmuka responsif, integrasi payment gateway via REST API, dan installer PWA.",
+      "image_url": "/uploads/Tangkapan_Layar_2026-11-02_pukul_20.30.38-1793626313802-4511.png",
+      "live_link": "https://beramalbersama.com/",
+      "github_link": "https://github.com/devkebaikan/donasi_astro/tree/beramal",
+      "tech_stack": [
+        "Astro",
+        "TailwindCSS",
+        "PWA",
+        "REST API",
+        "SEO"
+      ],
+      "case_study": {
+        "client": "Digimedia Siber Optima / Beramalbersama",
+        "duration": "2024 – Sekarang",
+        "role": "Frontend Developer",
+        "overview": "Beramalbersama adalah platform donasi dan galang dana online yang dirancang untuk mempermudah masyarakat dalam berdonasi secara aman, transparan, dan cepat dari berbagai perangkat.",
+        "challenges": "Kebutuhan akan pengalaman pengguna yang cepat dan mulus bagi para donatur, loading time instan pada koneksi internet seluler menengah ke bawah, serta kemudahan donasi berulang tanpa harus mengunduh aplikasi native dari store.",
+        "solution": "Menggunakan arsitektur Astro untuk meminimalkan JavaScript overhead, TailwindCSS untuk styling responsif mobile-first, integrasi REST API untuk transaksi donasi dan data campaign real-time, serta implementasi Progressive Web App (PWA) agar website dapat diinstal langsung ke homescreen pengguna.",
+        "metrics": [
+          "Status: Production (Aktif Melayani Donatur Publik)",
+          "Implementasi PWA: Dapat diinstal langsung di Android & iOS",
+          "Pengurangan Waktu Muat: 40–60% lebih cepat dengan arsitektur Astro",
+          "Mobile-First UX: Konversi alur donasi mudah dalam 3 langkah"
+        ],
+        "features": [
+          "Halaman campaign donasi interaktif dengan progress bar dana terkumpul",
+          "Alur pembayaran donasi terintegrasi berbagai channel payment gateway",
+          "Fitur Progressive Web App (PWA) dengan service worker caching",
+          "Struktur metadata SEO teroptimasi untuk kemudahan berbagi tautan di media sosial"
+        ]
+      }
+    },
+    {
+      "id": "proj-2",
+      "slug": "linkup",
+      "title": "Linkup Event Platform",
+      "category": "Web Application",
+      "status": "Production",
+      "visibility": "public",
+      "featured": true,
+      "description": "Platform event modern yang menyajikan informasi kegiatan sosial, webinar, jadwal acara, dan halaman detail event yang interaktif.",
+      "image_url": "/uploads/Tangkapan_Layar_2026-11-02_pukul_20.30.56-1793626420953-1558.png",
+      "live_link": "https://linkup.beramalbersama.com/",
+      "github_link": "https://github.com/GalihWu",
+      "tech_stack": [
+        "Astro",
+        "TailwindCSS",
+        "REST API",
+        "Responsive Design"
+      ],
+      "case_study": {
+        "client": "Beramalbersama Event Network",
+        "duration": "2024",
+        "role": "Frontend Developer",
+        "overview": "Linkup adalah platform penyedia informasi kegiatan sosial, webinar, dan event offline/online yang memungkinkan pengguna menemukan serta mendaftar ke berbagai program acara secara terpadu.",
+        "challenges": "Menampilkan banyak data event dan jadwal dengan hierarki informasi yang jelas tanpa membuat halaman terasa padat atau lambat dimuat di perangkat ponsel.",
+        "solution": "Membangun antarmuka berbasis komponen Astro yang modular, perancangan layout kartu event dengan TailwindCSS, integrasi REST API untuk pencarian dan filter event dinamis, serta navigasi pendaftaran yang ringkas.",
+        "metrics": [
+          "Status: Production (Publik)",
+          "Desain Responsif: Navigasi optimal di desktop, tablet, dan smartphone",
+          "Performa Cepat: Server-rendered pages dengan minimal client hydration"
+        ],
+        "features": [
+          "Katalog daftar kegiatan dan event dengan kategori terstruktur",
+          "Halaman detail event lengkap dengan jadwal, lokasi, dan profil pembicara",
+          "Alur pendaftaran peserta terintegrasi formulir pendaftaran digital",
+          "Integrasi berbagi event ke media sosial dan aplikasi perpesanan"
+        ]
+      }
+    },
+    {
+      "id": "proj-3",
+      "slug": "beramalbersama-blog",
+      "title": "Beramalbersama Blog",
+      "category": "Content Platform",
+      "status": "Production",
+      "visibility": "public",
+      "featured": true,
+      "description": "Website publikasi artikel berita inspiratif, laporan penyaluran donasi, dan edukasi sosial berbasis Next.js dengan optimasi SEO tinggi.",
+      "image_url": "/uploads/Tangkapan_Layar_2026-11-02_pukul_20.29.55-1793626215466-2553.png",
+      "live_link": "https://blog.beramalbersama.com/",
+      "github_link": "https://github.com/GalihWu",
+      "tech_stack": [
+        "Next.js",
+        "TailwindCSS",
+        "SEO",
+        "ISR",
+        "REST API"
+      ],
+      "case_study": {
+        "client": "Beramalbersama Editorial",
+        "duration": "2024 – Sekarang",
+        "role": "Frontend Developer",
+        "overview": "Kanal media publikasi resmi Beramalbersama untuk menyajikan artikel transparansi penyaluran bantuan, kisah inspiratif penerima manfaat, dan tips filantropi.",
+        "challenges": "Meningkatkan visibilitas organik di mesin pencari (Google SEO), kecepatan indexing artikel baru, serta kenyamanan membaca (editorial reading experience) di layar kecil.",
+        "solution": "Menggunakan Next.js dengan teknik Incremental Static Regeneration (ISR) agar artikel selalu diperbarui tanpa build ulang penuh, penataan tipografi artikel editorial dengan Tailwind Typography, serta implementasi Open Graph dan JSON-LD schema markup.",
+        "metrics": [
+          "Status: Production (Publik)",
+          "SEO Score: Teroptimasi untuk Google Rich Snippets & metadata Open Graph",
+          "Rendering: Incremental Static Regeneration (ISR) untuk pembaruan cepat",
+          "Reading Experience: Desain bersih tanpa gangguan iklan/pop-up yang mengganggu"
+        ],
+        "features": [
+          "Feed artikel terbaru, kategori artikel, dan tagging konten relevan",
+          "Halaman baca artikel editorial dengan tipografi elegan dan estimasi waktu baca",
+          "Tautan donasi kontekstual langsung di akhir cerita artikel",
+          "Sitemap dinamis dan optimasi schema SEO terstruktur"
+        ]
+      }
+    },
+    {
+      "id": "proj-4",
+      "slug": "aksiberbagi",
+      "title": "Aksi Berbagi",
+      "category": "Web Application",
+      "status": "Production",
+      "visibility": "public",
+      "featured": true,
+      "description": "Platform crowdfunding donasi kemanusiaan berbasis Next.js dengan antarmuka yang bersih, alur checkout donasi cepat, dan integrasi API yang tangguh.",
+      "image_url": "/uploads/Tangkapan_Layar_2026-11-02_pukul_20.30.30-1793626325133-469.png",
+      "live_link": "https://aksiberbagi.com/",
+      "github_link": "https://github.com/GalihWu",
+      "tech_stack": [
+        "Next.js",
+        "TailwindCSS",
+        "REST API",
+        "Responsive Design"
+      ],
+      "case_study": {
+        "client": "Aksi Berbagi Foundation",
+        "duration": "2024 – Sekarang",
+        "role": "Frontend Developer",
+        "overview": "Platform crowdfunding sosial terpercaya yang memfasilitasi penggalangan dana untuk program kemanusiaan, pendidikan, kesehatan, dan bencana alam.",
+        "challenges": "Alur donasi harus sangat intuitif untuk semua kelompok usia, waktu respon formulir instan, serta integrasi berbagai status transaksi pembayaran yang dinamis.",
+        "solution": "Implementasi antarmuka Next.js yang modular, integrasi REST API pembayaran, validasi formulir interaktif di sisi klien, dan desain responsif mobile-first dengan TailwindCSS.",
+        "metrics": [
+          "Status: Production (Publik)",
+          "Alur Transaksi: Checkout donasi cepat dalam hitungan detik",
+          "Uptime & Stabilitas: Arsitektur Next.js yang handal untuk ribuan transaksi"
+        ],
+        "features": [
+          "Pencarian dan filter program galang dana berdasarkan kategori kebutuhan",
+          "Kalkulator nominal donasi interaktif dengan opsi custom amount",
+          "Halaman transparansi doa donatur dan kabar penyaluran terbaru",
+          "Sistem notifikasi status donasi via WhatsApp/Email"
+        ]
+      }
+    },
+    {
+      "id": "proj-5",
+      "slug": "beramalbersama-admin-panel",
+      "title": "Beramalbersama Admin Panel",
+      "category": "Admin Dashboard",
+      "status": "Private",
+      "visibility": "restricted",
+      "featured": false,
+      "description": "Dashboard internal untuk pengelolaan program campaign donasi, verifikasi data transaksi, pelaporan keuangan, dan manajemen konten platform.",
+      "image_url": "/uploads/proj_beramalbersama_admin.svg",
+      "live_link": "",
+      "github_link": "https://github.com/GalihWu",
+      "tech_stack": [
+        "Vue.js",
+        "Bootstrap",
+        "REST API",
+        "State Management"
+      ],
+      "case_study": {
+        "client": "Internal Operation Digimedia Siber Optima",
+        "duration": "2024",
+        "role": "Frontend Developer",
+        "overview": "Sistem dashboard berbasis web yang digunakan oleh tim operasional dan keuangan untuk memantau aliran dana masuk, memvalidasi bukti pembayaran, serta mengelola postingan campaign.",
+        "challenges": "Menyajikan volume tabel data transaksi yang besar secara terstruktur, responsif, dan mudah difilter oleh tim operasional harian.",
+        "solution": "Menggunakan Vue.js dengan state management terpusat untuk interaksi data real-time, komponen tabel responsif Bootstrap, serta validasi form multi-langkah untuk pembuatan campaign donasi baru.",
+        "metrics": [
+          "Status: Private Project (Sistem Operasional Internal)",
+          "Efisiensi: Mempercepat proses verifikasi donasi manual tim operasional",
+          "Keamanan: Role-based access control & token-based session"
+        ],
+        "features": [
+          "Tabel manajemen transaksi donasi dengan filter status (pending, sukses, gagal)",
+          "Form pembuatan dan moderasi program campaign galang dana",
+          "Laporan keuangan dan analitik ringkasan donasi mingguan/bulanan",
+          "Manajemen akun pengguna dan hak akses operasional"
+        ]
+      }
+    },
+    {
+      "id": "proj-6",
+      "slug": "donation-mobile-app",
+      "title": "Donation Mobile Application",
+      "category": "Mobile Application",
+      "status": "In Development",
+      "visibility": "public",
+      "featured": true,
+      "description": "Pengembangan aplikasi donasi online berbasis mobile untuk Android dan iOS menggunakan React Native, TypeScript, dan NativeWind.",
+      "image_url": "/uploads/proj_donation_mobile.svg",
+      "live_link": "",
+      "github_link": "https://github.com/GalihWu",
+      "tech_stack": [
+        "React Native",
+        "TypeScript",
+        "NativeWind",
+        "REST API",
+        "Mobile App"
+      ],
+      "case_study": {
+        "client": "Digimedia Siber Optima (R&D Mobile)",
+        "duration": "2024 – Sekarang (In Development)",
+        "role": "Mobile Frontend Developer",
+        "overview": "Pengembangan aplikasi donasi versi mobile yang memperluas jangkauan platform Beramalbersama ke ekosistem smartphone dengan pengalaman pengguna native yang cepat dan notifikasi langsung.",
+        "challenges": "Menghadirkan performa aplikasi yang stabil di berbagai varian perangkat Android, arsitektur kode yang terstruktur dengan TypeScript, serta keseragaman styling antara versi web dan mobile.",
+        "solution": "Memanfaatkan React Native dengan NativeWind (Tailwind utility classes untuk mobile) agar komponen UI konsisten dengan web, manajemen state yang rapi, penanganan error & loading state yang bersahabat, serta pengujian berkala pada perangkat Android fisik.",
+        "metrics": [
+          "Status: In Development (Pengembangan Aktif)",
+          "Lintas Platform: Satu basis kode TypeScript untuk Android & iOS",
+          "UI Consistency: Komponen desain sinkron dengan versi web Beramalbersama",
+          "Native Performance: Transisi navigasi layar yang halus (60 FPS)"
+        ],
+        "features": [
+          "Navigasi tab bar intuitif (Beranda, Donasi Saya, Kabar, Akun)",
+          "Komponen kartu campaign yang dapat digunakan kembali (reusable components)",
+          "Integrasi REST API donasi dan sinkronisasi data akun donatur",
+          "Penanganan loading skeleton, error handling, dan empty state interaktif"
+        ]
+      }
+    }
+  ],
+  "services": [
+    {
+      "id": "srv-1",
+      "name": "Web Development",
+      "description": "Pengembangan aplikasi web modern dan responsif menggunakan teknologi JavaScript dan TypeScript seperti Astro, Next.js, React.js, dan Vue.js.",
+      "icon": "code"
+    },
+    {
+      "id": "srv-2",
+      "name": "Mobile Development (React Native)",
+      "description": "Pengembangan aplikasi mobile lintas platform untuk Android dan iOS menggunakan React Native, TypeScript, dan NativeWind dengan performa native yang mulus.",
+      "icon": "smartphone"
+    },
+    {
+      "id": "srv-3",
+      "name": "UI Implementation & Responsive Design",
+      "description": "Penerjemahan desain Figma ke antarmuka web dan mobile yang responsif, rapi, dan mudah dirawat menggunakan TailwindCSS dan Bootstrap.",
+      "icon": "layout"
+    },
+    {
+      "id": "srv-4",
+      "name": "Performance & Core Web Vitals",
+      "description": "Optimasi performa halaman web, teknik lazy loading, code splitting, Incremental Static Regeneration (ISR), dan SEO best practices untuk pengalaman pengguna optimal.",
+      "icon": "zap"
+    }
+  ]
+}

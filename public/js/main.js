@@ -28,10 +28,25 @@ function initMobileMenu() {
 // Fetch and Hydrate Profile Data
 async function loadProfileData() {
   try {
-    const res = await fetch('/api/profile');
-    if (!res.ok) throw new Error('Gagal memuat data dari server.');
-    const json = await res.json();
-    const data = json.data;
+    let data = null;
+
+    // Coba ambil dari REST API terlebih dahulu
+    try {
+      const res = await fetch('/api/profile');
+      if (res.ok) {
+        const json = await res.json();
+        data = json.data;
+      }
+    } catch (e) {
+      console.warn('API endpoint tidak tersedia, mencoba static fallback...');
+    }
+
+    // Fallback jika di-host secara static (misal Netlify/GitHub Pages)
+    if (!data) {
+      const staticRes = await fetch('/data/profile.json');
+      if (!staticRes.ok) throw new Error('Gagal memuat data profil.');
+      data = await staticRes.json();
+    }
 
     hydrateGeneral(data.general, data.about?.cv_url);
     hydrateSocials(data.socials);

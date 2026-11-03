@@ -30,22 +30,49 @@ async function loadProjectDetail() {
   }
 
   try {
-    // 1. Fetch current project detail
-    const res = await fetch(`/api/profile/projects/${identifier}`);
-    if (!res.ok) throw new Error('Proyek tidak ditemukan.');
-    const json = await res.json();
-    const proj = json.data;
-
-    // 2. Fetch all projects to build Next/Previous navigation
+    let proj = null;
     let allProjects = [];
+
+    // 1. Coba ambil dari REST API terlebih dahulu
+    try {
+      const res = await fetch(`/api/profile/projects/${identifier}`);
+      if (res.ok) {
+        const json = await res.json();
+        proj = json.data;
+      }
+    } catch (e) {
+      console.warn('API endpoint tidak tersedia, mencoba static fallback...');
+    }
+
+    // 2. Fetch all projects (atau fallback jika di-host secara static seperti Netlify)
     try {
       const allRes = await fetch('/api/profile');
       if (allRes.ok) {
         const allJson = await allRes.json();
-        allProjects = allJson.data.projects || [];
+        allProjects = allJson.data?.projects || [];
+      } else {
+        throw new Error('Fallback static list');
       }
     } catch (e) {
-      console.warn('Gagal memuat list proyek untuk navigasi:', e);
+      // Static fallback ke /data/profile.json
+      try {
+        const staticRes = await fetch('/data/profile.json');
+        if (staticRes.ok) {
+          const staticJson = await staticRes.json();
+          allProjects = staticJson.projects || [];
+        }
+      } catch (err) {
+        console.error('Gagal memuat static profile.json:', err);
+      }
+    }
+
+    // Jika proj belum didapatkan dari API, cari dari allProjects
+    if (!proj && allProjects.length > 0) {
+      proj = allProjects.find(p => p.id === identifier || p.slug === identifier);
+    }
+
+    if (!proj) {
+      throw new Error('Proyek tidak ditemukan.');
     }
 
     // Hydrate Data
