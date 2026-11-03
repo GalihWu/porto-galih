@@ -2,7 +2,6 @@
   "general": {
     "name": "Galih Wahyu Utomo",
     "title": "Frontend Developer",
-    "tagline": "Membangun pengalaman digital modern melalui aplikasi web yang responsif, cepat, dan mudah digunakan.",
     "bio": "Saya adalah Frontend Developer yang berfokus pada pengembangan aplikasi web modern. Berpengalaman membangun antarmuka responsif, mengintegrasikan REST API, serta mengoptimalkan performa aplikasi menggunakan teknologi JavaScript dan TypeScript. Saya juga mengembangkan kemampuan mobile development menggunakan React Native untuk memperluas pengalaman membangun produk digital lintas platform.",
     "email": "galihwu2@gmail.com",
     "phone": "+62 857-9921-5319",
@@ -20,7 +19,7 @@
     {
       "id": "soc-2",
       "platform": "LinkedIn",
-      "url": "https://linkedin.com/in/galihwu2",
+      "url": "https://www.linkedin.com/in/galihwahyuutomo/",
       "icon": "linkedin"
     },
     {
@@ -127,9 +126,9 @@
       "visibility": "public",
       "featured": true,
       "description": "Platform donasi online yang cepat dan mudah diakses, dilengkapi antarmuka responsif, integrasi payment gateway via REST API, dan installer PWA.",
-      "image_url": "/uploads/proj_beramalbersama.svg",
+      "image_url": "/uploads/Tangkapan_Layar_2026-11-02_pukul_20.30.38-1793626313802-4511.png",
       "live_link": "https://beramalbersama.com/",
-      "github_link": "https://github.com/GalihWu",
+      "github_link": "https://github.com/devkebaikan/donasi_astro/tree/beramal",
       "tech_stack": [
         "Astro",
         "TailwindCSS",
@@ -167,7 +166,7 @@
       "visibility": "public",
       "featured": true,
       "description": "Platform event modern yang menyajikan informasi kegiatan sosial, webinar, jadwal acara, dan halaman detail event yang interaktif.",
-      "image_url": "/uploads/proj_linkup.svg",
+      "image_url": "/uploads/Tangkapan_Layar_2026-11-02_pukul_20.30.56-1793626420953-1558.png",
       "live_link": "https://linkup.beramalbersama.com/",
       "github_link": "https://github.com/GalihWu",
       "tech_stack": [
@@ -205,7 +204,7 @@
       "visibility": "public",
       "featured": true,
       "description": "Website publikasi artikel berita inspiratif, laporan penyaluran donasi, dan edukasi sosial berbasis Next.js dengan optimasi SEO tinggi.",
-      "image_url": "/uploads/proj_blog_beramalbersama.svg",
+      "image_url": "/uploads/Tangkapan_Layar_2026-11-02_pukul_20.29.55-1793626215466-2553.png",
       "live_link": "https://blog.beramalbersama.com/",
       "github_link": "https://github.com/GalihWu",
       "tech_stack": [
@@ -245,7 +244,7 @@
       "visibility": "public",
       "featured": true,
       "description": "Platform crowdfunding donasi kemanusiaan berbasis Next.js dengan antarmuka yang bersih, alur checkout donasi cepat, dan integrasi API yang tangguh.",
-      "image_url": "/uploads/proj_aksiberbagi.svg",
+      "image_url": "/uploads/Tangkapan_Layar_2026-11-02_pukul_20.30.30-1793626325133-469.png",
       "live_link": "https://aksiberbagi.com/",
       "github_link": "https://github.com/GalihWu",
       "tech_stack": [
