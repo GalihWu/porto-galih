@@ -49,25 +49,29 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start Server
-const server = app.listen(PORT, () => {
-  console.log(`====================================================`);
-  console.log(`🚀 Portfolio CMS Server berjalan di port: ${PORT}`);
-  console.log(`🌐 Public Profile: http://localhost:${PORT}/`);
-  console.log(`💼 Project Detail Demo: http://localhost:${PORT}/project/oceanpulse-web-performance-engine`);
-  console.log(`⚙️  Admin Panel CMS: http://localhost:${PORT}/admin`);
-  console.log(`📁 Local Data Storage: ./data/profile.json`);
-  console.log(`====================================================`);
-});
+// Start Server (only if run directly, not when imported as a serverless function)
+if (require.main === module) {
+  const server = app.listen(PORT, () => {
+    console.log(`====================================================`);
+    console.log(`🚀 Portfolio CMS Server berjalan di port: ${PORT}`);
+    console.log(`🌐 Public Profile: http://localhost:${PORT}/`);
+    console.log(`💼 Project Detail Demo: http://localhost:${PORT}/project/beramalbersama-platform-donasi`);
+    console.log(`⚙️  Admin Panel CMS: http://localhost:${PORT}/admin`);
+    console.log(`📁 Local Data Storage: ./data/profile.json`);
+    console.log(`====================================================`);
+  });
 
-server.on('error', (err) => {
-  if (err.code === 'EADDRINUSE') {
-    console.error(`\n⚠️  Port ${PORT} sedang digunakan oleh proses lain.`);
-    console.error(`👉 Untuk mematikan proses yang menggunakan port ${PORT}, jalankan:`);
-    console.error(`   lsof -ti :${PORT} | xargs kill -9`);
-    console.error(`👉 Atau ubah PORT di file .env (misalnya PORT=3001).\n`);
-    process.exit(1);
-  } else {
-    throw err;
-  }
-});
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`\n⚠️  Port ${PORT} sedang digunakan oleh proses lain.`);
+      console.error(`👉 Untuk mematikan proses yang menggunakan port ${PORT}, jalankan:`);
+      console.error(`   lsof -ti :${PORT} | xargs kill -9`);
+      console.error(`👉 Atau ubah PORT di file .env (misalnya PORT=3001).\n`);
+      process.exit(1);
+    } else {
+      throw err;
+    }
+  });
+}
+
+module.exports = app;

@@ -10,11 +10,21 @@ const TMP_FILE = path.join(DATA_DIR, 'profile.tmp.json');
  * Membaca data profile.json
  */
 function readProfileData() {
-  if (!fs.existsSync(PROFILE_FILE)) {
+  try {
+    if (fs.existsSync(PROFILE_FILE)) {
+      const raw = fs.readFileSync(PROFILE_FILE, 'utf-8');
+      return JSON.parse(raw);
+    }
+  } catch (err) {
+    console.warn('Gagal membaca profile.json lewat fs, mencoba require fallback:', err.message);
+  }
+
+  // Fallback bundled json untuk serverless Vercel / Netlify
+  try {
+    return require('../data/profile.json');
+  } catch (err) {
     throw new Error('File data profile.json tidak ditemukan.');
   }
-  const raw = fs.readFileSync(PROFILE_FILE, 'utf-8');
-  return JSON.parse(raw);
 }
 
 /**
@@ -23,6 +33,15 @@ function readProfileData() {
  * @returns {object} status & metadata penyimpanan
  */
 function saveProfileDataSafely(newData) {
+  // Jika berjalan di lingkungan serverless seperti Vercel (read-only filesystem)
+  if (process.env.VERCEL || process.env.NETLIFY) {
+    return {
+      success: false,
+      isServerless: true,
+      message: 'Website berjalan di Vercel (Serverless Read-Only). Untuk memperbarui portofolio, edit data melalui komputer lokal (localhost:3000/admin) lalu jalankan "git push" ke GitHub agar terupdate otomatis!'
+    };
+  }
+
   // Pastikan folder data tersedia
   if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });

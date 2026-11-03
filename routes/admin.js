@@ -139,6 +139,14 @@ router.put('/profile', requireAuth, (req, res) => {
     // 2. Safe-Save (Backup otomatis + Atomic Write)
     const result = saveProfileDataSafely(newData);
 
+    if (!result.success) {
+      return res.status(400).json({
+        success: false,
+        message: result.message,
+        isServerless: result.isServerless
+      });
+    }
+
     return res.json({
       success: true,
       message: result.message,
